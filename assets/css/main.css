@@ -1,83 +1,77 @@
-/* ---------- Theme Palette (Updated for Gold/Taupe Palette) ---------- */
+/* ---------- Theme Palette (Updated for Violet/Blue Metallic Palette) ---------- */
 :root{
-  /* New Palette from image:
-     #111822 - Deep Charcoal (Background)
-     #333740 - Dark Gray (Cards, Sidebar Base)
-     #6C6A6A - Medium Gray (Muted, Borders)
-     #4F362A - Rich Brown (Secondary Accent)
-     #745850 - Rich Taupe (Primary Accent/Gold look)
-     #F3B699 - Soft Peach (Lightest Accent)
-  */
-  --bg-main:#111822;    /* Deep Charcoal */
-  --card-base:#333740;  /* Dark Gray */
-  --muted-text:#6C6A6A; /* Medium Gray */
-  --accent-primary: #745850; /* Rich Taupe - The "Gold" look */
-  --accent-secondary: #4F362A; /* Rich Brown */
-  --accent-lightest: #F3B699; /* Soft Peach */
+  /* New Violet/Blue/Purple Palette: */
+  --g-start: #C700FF;   /* Bright Violet (Primary Accent) */
+  --g-end: #0030FF;     /* Deep Blue (Secondary Accent) */
+  --accent-secondary-shade: #8A2BE2; /* Metallic Violet */
+
+  --bg-deep:#03000C;      /* Deep Purplish Black */
+  --card-base: #1C1133;   /* Deep Purple-Gray for card/sidebar base */
 
   /* Mapped Variables */
-  --card: rgba(255,255,255,0.06); /* Slightly lighter for contrast */
-  --muted: var(--muted-text);
-  --accent-1: var(--accent-primary);
-  --accent-2: var(--accent-secondary);
-  --glass: rgba(255,255,255,0.02);
+  --bg-main: var(--bg-deep);
+  --card: var(--card-base);
+  --muted: rgba(255,255,255,0.65);
+  --accent-1: var(--g-start);
+  --accent-2: var(--g-end);
+  --glass: rgba(255,255,255,0.04); /* Frosted glass effect */
   --radius:14px;
 }
 
-/* ---------- Base (Changed body background) ---------- */
+/* ---------- Base (Applying the deeper background) ---------- */
 *{box-sizing:border-box}
 body{
   margin:0;
   font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color:#fff;
-  /* Changed background from gradient to solid deep charcoal */
+  /* Solid deep background */
   background: var(--bg-main);
   min-height:100vh;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
 }
 
-/* ---------- Header / Sidebar (Changed gradient/shadows) ---------- */
+/* ---------- Header / Sidebar (Glass and Glow effect) ---------- */
 .header{
   width:280px;
   min-height:100vh;
   position:fixed;
   left:0; top:0;
   padding:30px 20px;
-  /* Changed to a more subtle, solid color with a lighter border */
-  background:var(--card-base);
+  /* Dark base with glass overlay */
+  background:linear-gradient(180deg, rgba(28, 17, 51, 0.9), rgba(28, 17, 51, 0.85));
   border-right:1px solid rgba(255,255,255,0.08);
   box-shadow: 0 8px 40px rgba(0,0,0,0.55);
   z-index:40;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px); /* Stronger blur for glassmorphism */
   transition:box-shadow .2s, transform .18s;
 }
-/* Removed neon sidebar glow, replaced with subtle border highlight */
+/* Neon sidebar glow border using the violet/blue gradient */
 .header::after{
   content:"";
   position:absolute; inset:0;
-  border-left:4px solid var(--accent-primary);
-  box-shadow: 0 0 20px rgba(116,88,80,0.15), inset 0 0 48px rgba(0,0,0,0.1);
+  border-left:4px solid transparent;
+  box-shadow: 0 0 30px var(--g-start), inset 0 0 60px var(--g-end);
   pointer-events:none;
-  opacity: 0.2; /* Soften the look */
+  opacity: 0.2;
 }
 .header .profile-img{margin-top:6px}
 .header .profile-img img{width:120px;height:120px;object-fit:cover;border-radius:999px;border:3px solid rgba(255,255,255,0.1)}
-/* Changed sitename from gradient to primary accent color */
-.header .sitename{letter-spacing:2px;margin:14px 0;font-size:20px;color:var(--accent-primary); background: none; -webkit-background-clip:unset; background-clip:unset; text-shadow:0 0 10px rgba(116,88,80,0.2)}
-.social-links a{margin:0 6px;color:var(--muted);transition:transform .18s}
-.social-links a:hover{transform:translateY(-6px); filter:drop-shadow(0 8px 30px rgba(116,88,80,0.18)); color:var(--accent-primary)}
+/* Sitename gradient using neon violet/blue */
+.header .sitename{letter-spacing:2px;margin:14px 0;font-size:20px;color:#fff; background: linear-gradient(90deg,var(--g-start),var(--g-end)); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none}
+.social-links a{margin:0 6px;color:rgba(255,255,255,0.8);transition:transform .18s}
+.social-links a:hover{transform:translateY(-6px); filter:drop-shadow(0 8px 30px var(--g-start)); color:var(--g-end)}
 
 /* nav */
 .navmenu{margin-top:18px}
-.navmenu .nav-link{color: var(--muted); padding:9px 0; display:block; transition:all .18s ease}
-/* Changed active/hover color to primary accent */
-.navmenu .nav-link:hover,.navmenu .nav-link.active{color:var(--accent-primary); transform:translateX(6px); text-shadow: 0 0 12px rgba(116,88,80,0.4)}
+.navmenu .nav-link{color: rgba(255,255,255,0.85); padding:9px 0; display:block; transition:all .18s ease}
+/* Active/hover color is the neon violet/blue gradient */
+.navmenu .nav-link:hover,.navmenu .nav-link.active{color:var(--g-start); transform:translateX(6px); text-shadow: 0 0 16px var(--g-end), 0 0 8px var(--g-start)}
 .navicon{margin-right:8px}
 
 /* mobile */
 @media (max-width:1199px){
-  .header{position:relative;width:100%;min-height:auto;display:flex;flex-direction:row;align-items:center;gap:12px;padding:12px; background:var(--bg-main)} /* Use main background for mobile header */
+  .header{position:relative;width:100%;min-height:auto;display:flex;flex-direction:row;align-items:center;gap:12px;padding:12px; background:var(--bg-main)}
   .header::after{display:none}
   .navmenu{display:none}
   .main{margin-left:0;padding-top:16px}
@@ -90,7 +84,8 @@ body{
 .section-header h2{margin-bottom:8px}
 
 /* ---------- Hero ---------- */
-.hero .hero-card{display:inline-block;background: var(--card); padding:18px;border-radius:18px;box-shadow: 0 30px 80px rgba(0,0,0,0.45), 0 8px 30px rgba(116,88,80,0.15); transform: translateY(0); transition:transform .6s ease}
+/* Changed hero card to match glass effect */
+.hero .hero-card{display:inline-block;background: var(--glass); padding:18px;border-radius:18px;box-shadow: 0 30px 80px rgba(0,0,0,0.45), 0 8px 30px var(--g-start); transform: translateY(0); transition:transform .6s ease; backdrop-filter: blur(6px);}
 .hero .hero-card:hover{transform:translateY(-8px)}
 .hero-image{max-width:420px;border-radius:14px;object-fit:cover; display:block; margin:0 auto; box-shadow:0 18px 60px rgba(0,0,0,0.6)}
 
@@ -100,52 +95,53 @@ body{
   @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
 }
 
-/* ---------- Card styles (Changed card colors to match new palette) ---------- */
-.card-box{background:var(--card-base); border-radius:12px;padding:18px; box-shadow:0 12px 40px rgba(0,0,0,0.45)}
+/* ---------- Card styles (Darker base for better glow) ---------- */
+.card-box{background:var(--card-base); border-radius:12px;padding:18px; box-shadow:0 12px 40px rgba(0,0,0,0.6)}
 .box-title{color:#fff;margin-bottom:12px}
 
 /* project card */
-.project-card{background:var(--card-base); border-radius:12px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,0.45);height:100%}
+.project-card{background:var(--card-base); border-radius:12px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,0.6);height:100%}
 .project-card img{border-radius:10px;width:100%;height:180px;object-fit:cover}
-.project-card:hover{transform:translateY(-8px);box-shadow:0 30px 90px rgba(0,0,0,0.52)}
+.project-card:hover{transform:translateY(-8px);box-shadow:0 30px 90px rgba(0,0,0,0.7); border:1px solid var(--g-start)}
 
 /* tags */
-.project-tags span{background: rgba(0,0,0,0.4); color:var(--accent-lightest); border-radius:999px;padding:6px 10px;margin-right:6px;font-size:12px;display:inline-block}
+.project-tags span{background: rgba(0,0,0,0.4); color:var(--g-start); border-radius:999px;padding:6px 10px;margin-right:6px;font-size:12px;display:inline-block; border:1px solid var(--g-end)}
 
-/* buttons (Updated from gradient to solid accent color) */
+/* buttons (Neon gradient) */
 .btn-glow{
   border:none;border-radius:10px;padding:8px 14px;font-weight:600;
-  /* New solid color for "glow" button */
-  background:var(--accent-primary);
-  color:var(--bg-main); /* Dark text on the light button */
-  box-shadow:0 12px 40px rgba(116,88,80,0.2), 0 6px 20px rgba(116,88,80,0.1);
+  /* Neon Violet/Blue Gradient */
+  background:linear-gradient(90deg,var(--g-start),var(--g-end));
+  color:#fff;
+  /* Stronger neon shadow/glow */
+  box-shadow:0 0 20px rgba(199, 0, 255, 0.4), 0 0 40px rgba(0, 48, 255, 0.3);
   transition:transform .12s, opacity .12s; display:inline-flex; gap:8px; align-items:center;
 }
-.btn-glow:hover{transform:translateY(-3px); opacity:.98; color:var(--bg-main);}
-/* Changed outline button to use accent color for outline/text */
+.btn-glow:hover{transform:translateY(-3px); opacity:.98; box-shadow:0 0 30px rgba(199, 0, 255, 0.6), 0 0 60px rgba(0, 48, 255, 0.5);}
+/* Outline button with neon border/text */
 .btn-glow-outline{
   border-radius:10px;padding:8px 14px;font-weight:600;background:transparent;
-  border:1px solid var(--accent-primary);
-  color:var(--accent-primary);
+  border:1px solid var(--g-end);
+  color:var(--g-start);
   transition:all .12s;
 }
-.btn-glow-outline:hover{background:var(--accent-primary); color:var(--bg-main); box-shadow:0 0 20px rgba(116,88,80,0.3)}
+.btn-glow-outline:hover{background:var(--g-start); color:#fff; box-shadow:0 0 20px var(--g-start)}
 
 /* info cards */
-.info-card{background:var(--card-base);padding:18px;border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,0.45)}
+.info-card{background:var(--card-base);padding:18px;border-radius:12px;box-shadow:0 12px 36px rgba(0,0,0,0.6); border-top:2px solid var(--g-start)}
 
 /* certificates */
-.cert-card{background:var(--card-base);padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.45); display:flex;align-items:center; justify-content:center}
-.cert-content h6{margin:0 0 6px 0}
-.cert-content p{margin:0 0 10px 0}
+.cert-card{background:var(--card-base);padding:18px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.6); display:flex;align-items:center; justify-content:center}
+.cert-content h6{margin:0 0 6px 0; color:#fff}
+.cert-content p{margin:0 0 10px 0; color:var(--accent-secondary-shade)}
 
-/* contact icons */
-.contact-icon{background:var(--card); padding:16px;border-radius:12px;color:#fff; display:flex;flex-direction:column;align-items:center;gap:6px; transition:transform .12s, background .12s}
-.contact-icon i{color:var(--accent-primary)} /* Highlight icons */
-.contact-icon:hover{transform:translateY(-6px);background: var(--card-base); color:var(--accent-primary)}
-.contact-icon:hover i{color:var(--accent-lightest)}
+/* contact icons (using glass effect) */
+.contact-icon{background:var(--glass); padding:16px;border-radius:12px;color:#fff; display:flex;flex-direction:column;align-items:center;gap:6px; transition:transform .12s, background .12s; backdrop-filter: blur(4px);}
+.contact-icon i{color:var(--g-start)}
+.contact-icon:hover{transform:translateY(-6px);background: var(--card-base); color:var(--g-end); border:1px solid var(--g-start)}
+.contact-icon:hover i{color:var(--g-end)}
 
-/* ---------- Skills Dashboard specifics (Updated gradients/colors) ---------- */
+/* ---------- Skills Dashboard specifics (Neon gradient) ---------- */
 /* skill row */
 .skill-row{margin-bottom:14px}
 .skill-label{font-weight:600;color:#fff;margin-bottom:6px}
@@ -154,13 +150,13 @@ body{
 .gradient-bar{
   height:100%; border-radius:999px; box-shadow:0 8px 30px rgba(0,0,0,0.35), 0 4px 12px rgba(0,0,0,0.18);
   transition:box-shadow .2s, transform .18s;
-  /* New, subtle accent gradient */
-  background:linear-gradient(90deg,var(--accent-secondary), var(--accent-primary));
+  /* Neon accent gradient */
+  background:linear-gradient(90deg,var(--g-start), var(--g-end));
   position:relative;
   transform: translateZ(0);
 }
 /* small glowing reflection stripe */
-.gradient-bar::after{content:""; position:absolute; right:6%; top:0; bottom:0; width:6%; background:linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02)); mix-blend-mode:overlay; border-radius:999px; opacity:0.6}
+.gradient-bar::after{content:""; position:absolute; right:6%; top:0; bottom:0; width:6%; background:linear-gradient(90deg, rgba(255,255,255,0.22), rgba(255,255,255,0.02)); mix-blend-mode:overlay; border-radius:999px; opacity:0.6}
 
 /* dynamic width helpers (can be duplicated or replaced inline) */
 .bar-95{width:95%}
@@ -169,29 +165,22 @@ body{
 .bar-75{width:75%}
 
 /* small tool cards (Updated icon colors) */
-.tool-card{background:var(--card);padding:14px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 30px rgba(0,0,0,0.4)}
+.tool-card{background:var(--glass);padding:14px;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;box-shadow:0 10px 30px rgba(0,0,0,0.4); backdrop-filter: blur(4px);}
 /* Tool icon color changed to primary accent */
-.tool-card i{font-size:22px;padding:10px;border-radius:999px;background: var(--accent-primary); color:var(--bg-main); box-shadow:0 8px 30px rgba(116,88,80,0.2)}
-.tool-card:hover i{background:var(--accent-lightest)}
+.tool-card i{font-size:22px;padding:10px;border-radius:999px;background: var(--g-end); color:#fff; box-shadow:0 0 16px var(--g-start)}
+.tool-card:hover i{background:var(--g-start); color:#fff; box-shadow:0 0 20px var(--g-end)}
 
 /* pill tags for domains */
 .box-grid{background:var(--card-base);padding:14px;border-radius:12px}
-.pill{background:rgba(0,0,0,0.25);padding:10px;border-radius:12px;margin-bottom:8px;color:var(--accent-lightest); display:block}
+.pill{background:rgba(0,0,0,0.25);padding:10px;border-radius:12px;margin-bottom:8px;color:var(--g-start); display:block; border:1px solid var(--accent-secondary-shade)}
 
 /* ---------- Footer ---------- */
-.footer{margin-top:40px;padding:28px 0;background:transparent;color:var(--muted);border-top:1px solid rgba(255,255,255,0.05)}
+.footer{margin-top:40px;padding:28px 0;background:transparent;color:rgba(255,255,255,0.6);border-top:1px solid rgba(255,255,255,0.05)}
 
 /* ---------- Scroll top ---------- */
-/* Changed scroll-top from gradient to solid accent color */
-#scroll-top{position:fixed;right:18px;bottom:18px;background:var(--accent-primary);width:46px;height:46px;border-radius:50%;align-items:center;justify-content:center;display:flex;box-shadow:0 10px 30px rgba(116,88,80,0.3);color:var(--bg-main)}
+/* Scroll-top button uses neon gradient and glow */
+#scroll-top{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,var(--g-start),var(--g-end));width:46px;height:46px;border-radius:50%;align-items:center;justify-content:center;display:flex;box-shadow:0 0 30px var(--g-start);color:#fff}
 #scroll-top i{font-size:20px}
 
-/* ---------- Responsive ---------- */
-@media (max-width:991px){
-  .main{margin-left:0;padding:20px}
-  .header{display:flex;align-items:center}
-  .hero-image{max-width:320px}
-}
-
 /* ---------- Focus/Accessibility ---------- */
-a:focus, button:focus {outline:3px solid var(--accent-lightest);outline-offset:2px}
+a:focus, button:focus {outline:3px solid var(--g-start);outline-offset:2px}
