@@ -1,403 +1,660 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chahat — Portfolio</title>
+  <head>
+    <meta charset="UTF-8" />
 
-  <link href="assets\img\logo.jpg" rel="icon" />
-  <!-- Bootstrap & vendor CSS -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Main CSS -->
-  <link href="assets/css/main.css" rel="stylesheet" />
-</head>
-<body class="index-page">
-  <!-- Sidebar header -->
-  <header id="header" class="header d-flex flex-column" role="navigation" aria-label="Main navigation">
-    <button class="header-toggle d-xl-none btn btn-sm" id="navToggle" aria-label="Toggle navigation">
-      <i class="bi bi-list"></i>
-    </button>
+    <title>Chahat | Portfolio</title>
+    <link rel="icon" href="assets\img\logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets\img\logo.png">
+    <link rel="apple-touch-icon" href="assets\img\logo.png">
 
-    <div class="profile-img text-center" data-aos="fade-up">
-      <img src="assets\img\chahat.png" alt="Chahat profile" class="img-fluid rounded-circle" />
-    </div>
+    <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
 
-    <a href="#hero" class="logo d-flex align-items-center justify-content-center" aria-label="Go to top">
-      <h1 class="sitename">CHAHAT</h1>
-    </a>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <div class="social-links text-center" aria-hidden="false">
-      <a href="#" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-      <a href="https://github.com/" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
-      <a href="https://www.linkedin.com/in/chahat-kumar-34475231a/" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-    </div>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-    <nav id="navmenu" class="navmenu mt-3" aria-label="Sidebar links">
-      <ul class="nav flex-column text-center">
-        <li class="nav-item"><a class="nav-link active" href="#hero"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#about"><i class="bi bi-person navicon"></i>About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills"><i class="bi bi-bar-chart navicon"></i>Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#education"><i class="bi bi-journal-text navicon"></i>Education</a></li>
-        <li class="nav-item"><a class="nav-link" href="#experience"><i class="bi bi-briefcase navicon"></i>Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects"><i class="bi bi-folder navicon"></i>Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="#certificates"><i class="bi bi-award navicon"></i>Certificates</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact"><i class="bi bi-envelope navicon"></i>Contact</a></li>
+    <!-- BOOTSTRAP ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- THREE.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- VANTA -->
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  </head>
+
+  <body>
+    <!-- BACKGROUND BLURS -->
+    <div class="blur blur1"></div>
+    <div class="blur blur2"></div>
+    <div class="blur blur3"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">CHAHAT</div>
+
+      <ul class="nav-links">
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
       </ul>
+
+      <div class="menu-toggle">
+        <i class="bi bi-list"></i>
+      </div>
     </nav>
-  </header>
 
-  <main class="main">
-    <!-- Hero -->
-    <section id="hero" class="hero section text-center" data-aos="fade-up">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6 order-2 order-lg-1 text-lg-start text-center">
-            <h2 class="hero-title">Hello, I'm <strong>Chahat</strong></h2>
-            <p class="lead">I'm <span class="typed" data-typed-items="ML Engineer, Data Engineer, Data Analysist"></span></p>
-            <div class="mt-3">
-              <a class="btn btn-glow me-2" href="assets\img\CHAHAT_CV.pdf_page-0001.jpg" aria-label="Download resume"><i class="bi bi-download"></i> Resume</a>
-              <a class="btn btn-glow-outline" href="#" aria-label="Contact me"><i class="bi bi-chat-dots"></i> Contact</a>
-            </div>
+    <!-- HERO -->
+    <section class="hero" id="about">
+      <!-- 3D BACKGROUND -->
+      <div id="vanta-bg"></div>
+
+      <div class="hero-content">
+        <p class="hero-top typed-text">COMPUTER VISION ENGINEER</p>
+
+        <h1 class="hero-title">
+          Building <br />
+          Intelligent <br />
+          Vision Systems
+        </h1>
+
+        <p class="hero-description">
+          CNN-based Deep Learning, Explainable AI, Computer Vision, and
+          Real-Time Emotion Recognition.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="primary-btn"> Explore Projects </a>
+
+          <a href="assets\resume\CHAHAT CV.pdf" class="secondary-btn">
+            Download Resume
+          </a>
+        </div>
+      </div>
+
+      <!-- FLOATING AI SPHERE -->
+      <div class="ai-sphere"></div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="stat-box">
+        <h2>10+</h2>
+        <p>Projects</p>
+      </div>
+
+      <div class="stat-box">
+        <h2>5+</h2>
+        <p>AI Systems</p>
+      </div>
+
+      <div class="stat-box">
+        <h2>3+</h2>
+        <p>Research Areas</p>
+      </div>
+
+      <div class="stat-box">
+        <h2>100%</h2>
+        <p>Passion</p>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="skills-section" id="skills">
+      <p class="section-tag">MY EXPERTISE</p>
+
+      <h2 class="section-title">Technologies I Use</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="bi bi-cpu-fill"></i>
+
+          <h3>Machine Learning</h3>
+
+          <p>Building predictive AI models using Python and deep learning.</p>
+        </div>
+
+        <div class="skill-card">
+          <i class="bi bi-camera-video-fill"></i>
+
+          <h3>Computer Vision</h3>
+
+          <p>
+            Real-time facial emotion recognition, OpenCV, CNN, image
+            classification.
+          </p>
+        </div>
+
+        <div class="skill-card">
+          <i class="bi bi-code-slash"></i>
+
+          <h3>Full Stack</h3>
+
+          <p>Building responsive futuristic web applications and dashboards.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <p class="section-tag">Featured Work</p>
+
+      <h2 class="section-title">My Projects</h2>
+
+      <div class="project-grid">
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="assets/img/Book recommender system.png"
+              alt="Book Recommendation System"
+            />
           </div>
 
-          <div class="col-lg-6 order-1 order-lg-2 text-center">
-            <!-- Larger hero image with glass and float -->
-            <div class="hero-card" data-aos="zoom-in" aria-hidden="false">
-              <img src="assets\img\chahat.png" alt="Hero illustration" class="hero-image img-fluid" />
+          <div class="project-content">
+            <h3>Book Recommendation System</h3>
+
+            <p>
+              AI-powered book recommendation system using collaborative
+              filtering and content-based approaches.
+            </p>
+
+            <div class="tags">
+              <span>Python |</span>
+              <span>Machine Learning |</span>
+              <span>Streamlit UI</span>
+            </div>
+
+            <!-- NEW BUTTONS -->
+            <div class="project-buttons">
+              <a
+                href="https://bookrecommenderapp-mqdfz6944npzwjwaasae2h.streamlit.app/"
+                target="_blank"
+                class="demo-btn"
+              >
+                <i class="bi bi-play-circle-fill"></i>
+                Run Project
+              </a>
+
+              <a
+                href="https://github.com/yourusername/project"
+                target="_blank"
+                class="github-btn"
+              >
+                <i class="bi bi-github"></i>
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets\img\SMS Detection.png" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>SMS Spam Detection</h3>
+
+            <p>
+              Built a machine learning model to classify messages as spam or not
+              using NLP techniques, TF-IDF, and supervised learning algorithms.
+            </p>
+
+            <div class="tags">
+              <span>ML | </span>
+              <span>NLP | </span>
+              <span>Supervised Learning</span>
+            </div>
+
+            <!-- NEW BUTTONS -->
+            <div class="project-buttons">
+              <a
+                href="https://spam-classifier-app-7qexcgehtqzzsk8mwhumwi.streamlit.app/"
+                target="_blank"
+                class="demo-btn"
+              >
+                <i class="bi bi-play-circle-fill"></i>
+                Run Project
+              </a>
+
+              <a
+                href="https://github.com/yourusername/project"
+                target="_blank"
+                class="github-btn"
+              >
+                <i class="bi bi-github"></i>
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets\img\Smart phone Price.png" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Smartphone Price Prediction</h3>
+
+            <p>
+              Machine learning model for predicting smartphone prices based on
+              features like brand, specifications, and market trends.
+            </p>
+
+            <div class="tags">
+              <span>Linear Regression | </span>
+              <span>Random Forest | </span>
+              <span>RegressorXGBoost Regressor</span>
+            </div>
+
+            <!-- NEW BUTTONS -->
+            <div class="project-buttons">
+              <a
+                href="https://smartphone-price-predictor-kfxscls8bpdj3orzgarpoq.streamlit.app/
+                target="_blank"
+                class="demo-btn"
+              >
+                <i class="bi bi-play-circle-fill"></i>
+                Run Project
+              </a>
+
+              <a
+                href="https://github.com/yourusername/project"
+                target="_blank"
+                class="github-btn"
+              >
+                <i class="bi bi-github"></i>
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets\img\Song recommender.png" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>
+              Real-Time-Mood-Based-Song-Recommendation-System-Using-Facial-Emotion-Recognition
+            </h3>
+
+            <p>
+              AI-Powered Real-Time Mood-Based Music Recommendation System A
+              computer vision–driven application that detects facial emotions in
+              real time using a ConvNeXt-based ONNX model and intelligently
+              recommends personalized music playlists through hybrid similarity
+              and popularity modeling.
+            </p>
+
+            <div class="tags">
+              <span>AI | </span>
+              <span>Computer Vision | </span>
+              <span>Music Recommendation</span>
+            </div>
+
+            <!-- NEW BUTTONS -->
+            <div class="project-buttons">
+              <a
+                href="https://encj2ntjmr8h5i7muh9n2z.streamlit.app/"
+                target="_blank"
+                class="demo-btn"
+              >
+                <i class="bi bi-play-circle-fill"></i>
+                Run Project
+              </a>
+
+              <a
+                href="https://github.com/yourusername/project"
+                target="_blank"
+                class="github-btn"
+              >
+                <i class="bi bi-github"></i>
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets\img\smart farmer.png" alt="AgroMind AI" />
+          </div>
+
+          <div class="project-content">
+            <h3>
+              AgroMind AI: Simple, memorable, and highlights the "brain" (AI)
+              behind the agriculture.
+            </h3>
+
+            <p>
+              AgroMind AI is an end-to-end precision agriculture platform that
+              bridges the gap between IoT sensing and cognitive AI. By
+              integrating real-time environmental data with Machine Learning and
+              Llama 3 (LLM) reasoning, it empowers farmers to make data-driven
+              decisions on crop selection and irrigation management. Featuring a
+              FastAPI backend and a real-time Streamlit-inspired dashboard,
+              AgroMind AI isn't just a monitoring tool—it’s an intelligent
+              farming assistant designed for a sustainable future.
+            </p>
+
+            <div class="tags">
+              <span>Internet of Things (IoT) | </span>
+              <span>FastAPI | </span>
+              <span>MongoDB</span>
+            </div>
+
+            <!-- NEW BUTTONS -->
+            <div class="project-buttons">
+              <a
+                href="https://your-streamlit-link.streamlit.app"
+                target="_blank"
+                class="demo-btn"
+              >
+                <i class="bi bi-play-circle-fill"></i>
+                Run Project
+              </a>
+
+              <a
+                href="https://github.com/yourusername/project"
+                target="_blank"
+                class="github-btn"
+              >
+                <i class="bi bi-github"></i>
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 6 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets\img\corona Pandmic.png" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Corona-Pandemic-Analysis</h3>
+
+            <p>
+              This project analyzes the global impact of the COVID-19 pandemic
+              using real-world data. It provides interactive visualizations and
+              insights into confirmed cases, recoveries, and deaths across
+              different countries and time periods.
+            </p>
+
+            <div class="tags">
+              <span>Pandas | </span>
+              <span>Matplot LIb | </span>
+              <span>Streamlit UI </span>
+            </div>
+
+            <!-- NEW BUTTONS -->
+            <div class="project-buttons">
+              <a
+                href="https://corona---pandmic--analysis-5qvuldjdpg7qyxiugdzzea.streamlit.app/"
+                target="_blank"
+                class="demo-btn"
+              >
+                <i class="bi bi-play-circle-fill"></i>
+                Run Project
+              </a>
+
+              <a
+                href="https://github.com/yourusername/project"
+                target="_blank"
+                class="github-btn"
+              >
+                <i class="bi bi-github"></i>
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 7 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets\img\Animal detection.png" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Animal Detection Night Vision System</h3>
+
+            <p>
+              This project is a sophisticated end-to-end computer vision
+              pipeline designed for real-time detection and classification of
+              animals in low-light and thermal environments. It leverages the
+              state-of-the-art ConvNeXtV2 deep learning architecture,
+              pre-trained on nocturnal imagery, and optimized using ONNX Runtime
+              for high-performance edge deployment..
+            </p>
+
+            <div class="tags">
+              <span>Computer Vision | </span>
+              <span>Deep Learning | </span>
+              <span>ONNX Runtime</span>
+            </div>
+
+            <!-- NEW BUTTONS -->
+            <div class="project-buttons">
+              <a
+                href="https://your-streamlit-link.streamlit.app"
+                target="_blank"
+                class="demo-btn"
+              >
+                <i class="bi bi-play-circle-fill"></i>
+                Run Project
+              </a>
+
+              <a
+                href="https://github.com/yourusername/project"
+                target="_blank"
+                class="github-btn"
+              >
+                <i class="bi bi-github"></i>
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 8 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/img/project8.jpg" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Face Detection</h3>
+
+            <p>Computer vision project for facial recognition and detection.</p>
+
+            <div class="tags">
+              <span>OpenCV</span>
+              <span>CV</span>
+              <span>Python</span>
+            </div>
+
+            <!-- NEW BUTTONS -->
+            <div class="project-buttons">
+              <a
+                href="https://your-streamlit-link.streamlit.app"
+                target="_blank"
+                class="demo-btn"
+              >
+                <i class="bi bi-play-circle-fill"></i>
+                Run Project
+              </a>
+
+              <a
+                href="https://github.com/yourusername/project"
+                target="_blank"
+                class="github-btn"
+              >
+                <i class="bi bi-github"></i>
+                Code
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 9 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/img/project9.jpg" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>AI Chatbot</h3>
+
+            <p>Intelligent chatbot system using NLP and AI responses.</p>
+
+            <div class="tags">
+              <span>Chatbot</span>
+              <span>NLP</span>
+              <span>AI</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 10 -->
+        <div class="project-card">
+          <div class="project-image">
+            <img src="assets/img/project10.jpg" alt="" />
+          </div>
+
+          <div class="project-content">
+            <h3>Price Prediction</h3>
+
+            <p>Smartphone price prediction using regression models.</p>
+
+            <div class="tags">
+              <span>Regression</span>
+              <span>ML</span>
+              <span>Python</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="about section" data-aos="fade-up">
-      <div class="container text-center">
-        <h2>About</h2>
-        <p class="mb-0">I’m passionate about turning data into meaningful insights and building smart systems that make a difference. With hands-on experience in Python, ML, and data visualization, I aim to grow as a Machine Learning Engineer. I enjoy learning new tools and applying them to real-world problems.
-          .</p>
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <p class="section-tag">CONTACT</p>
+
+      <h2 class="section-title">Let's Build Together</h2>
+
+      <div class="contact-box">
+        <p>📩 Email: chahatkumar1104@email.com</p>
+
+        <p>💻 GitHub: github.com/Chahat2830</p>
+
+        <p>🔗 LinkedIn: linkedin.com/in/chahat-kumar-34475231a</p>
       </div>
     </section>
 
-    <!-- Skills Dashboard (new) -->
-    <section id="skills" class="skills section" data-aos="fade-up">
-      <div class="container">
-        <div class="section-header text-center mb-4">
-          <h2>Technical Skills</h2>
-          <p class="small">Expertise across the full spectrum of machine learning technologies</p>
+    <!-- CHATBOT -->
+    <div class="chatbot-container">
+      <!-- BUTTON -->
+      <button class="chat-toggle" id="chatToggle">
+        <i class="bi bi-robot"></i>
+      </button>
+
+      <!-- CHAT BOX -->
+      <div class="chat-box" id="chatBox">
+        <!-- HEADER -->
+        <div class="chat-header">
+          <div>
+            <h3>Chahat AI</h3>
+
+            <p>Portfolio Assistant</p>
+          </div>
+
+          <button id="closeChat">
+            <i class="bi bi-x-lg"></i>
+          </button>
         </div>
 
-        <div class="row gy-4">
-          <!-- Left: Programming languages with gradient progress -->
-          <div class="col-lg-6">
-            <div class="card-box">
-              <h5 class="box-title">Programming Skills</h5>
-              <div class="skill-row">
-                <div class="skill-label d-flex justify-content-between"><span>Python</span><span>95%</span></div>
-                <div class="progress skill-progress" aria-hidden="true">
-                  <div class="progress-bar gradient-bar bar-95" role="progressbar" style="width:95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
+        <!-- BODY -->
+        <div class="chat-body" id="chatBody">
+          <div class="bot-message">
+            Hi 👋 <br /><br />
 
-              <div class="skill-row">
-                <div class="skill-label d-flex justify-content-between"><span>Data Analysis</span><span>85%</span></div>
-                <div class="progress skill-progress">
-                  <div class="progress-bar gradient-bar bar-85" role="progressbar" style="width:85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
+            I'm Chahat AI Assistant. Ask me about:
+            <br /><br />
 
-              <div class="skill-row">
-                <div class="skill-label d-flex justify-content-between"><span>Feature Engineering</span><span>80%</span></div>
-                <div class="progress skill-progress">
-                  <div class="progress-bar gradient-bar bar-80" role="progressbar" style="width:80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
+            • Projects
+            <br />
 
-              <div class="skill-row">
-                <div class="skill-label d-flex justify-content-between">Model Building, EDA<span></span><span>85%</span></div>
-                <div class="progress skill-progress">
-                  <div class="progress-bar gradient-bar bar-75" role="progressbar" style="width:75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-              </div>
-            </div>
-          </div>
+            • Skills
+            <br />
 
-          <!-- Right: Frameworks & Tools cards -->
-          <div class="col-lg-6">
-            <div class="card-box">
-              <h5 class="box-title">Frameworks & Tools</h5>
-              <div class="row g-3">
-                <div class="col-6">
-                  <div class="tool-card"><i class="bi bi-cpu"></i><div>NumPy</div></div>
-                </div>
-                <div class="col-6">
-                  <div class="tool-card"><i class="bi bi-table"></i><div>Pandas</div></div>
-                </div>
-                <div class="col-6">
-                  <div class="tool-card"><i class="bi bi-graph-up"></i><div>Matplotlib</div></div>
-                </div>
-                <div class="col-6">
-                  <div class="tool-card"><i class="bi bi-robot"></i><div>Scikit-learn</div></div>
-                </div>
-                <div class="col-6">
-                  <div class="tool-card"><i class="bi bi-table"></i><div>TensorFlow</div></div>
-                </div>
-              </div>
-            </div>
-          </div>
+            • Research
+            <br />
 
-          <!-- Lower: ML Domains / MLOps / Cloud -->
-          <div class="col-12">
-            <div class="row gy-3">
-              <div class="col-md-4">
-                <div class="box-grid">
-                  <h6>ML Domains</h6>
-                  <div class="pill">Computer Vision</div>
-                  <div class="pill">Natural Language Processing</div>
-                  <div class="pill">Recommender Systems</div>
-                   <div class="pill">Data Analytics & Visualization</div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="box-grid">
-                  <h6>MLOps</h6>
-                  <div class="pill">Model development & experimentation</div>
-                  <div class="pill">Basic data pipeline building</div>
-                  <div class="pill">Local model deployment (potential)</div>
-                  <div class="pill">Beginner level CI/CD awareness (can be learned next)</div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="box-grid">
-                  <h6>Cloud Platforms</h6>
-                  <div class="pill">AWS</div>
-                  <div class="pill">Google Cloud</div>
-                  <div class="pill">Azure</div>
-                </div>
-              </div>
-            </div>
+            • Resume
+            <br />
+
+            • Contact
           </div>
         </div>
-      </div> <!-- container -->
-    </section>
 
-    <!-- Projects -->
-    <section id="projects" class="projects section" data-aos="fade-up">
-      <div class="container">
-        <div class="section-header text-center">
-          <h2>Featured Projects</h2>
-          <p>Innovative AI solutions that push the boundaries of what's possible.</p>
+        <!-- QUICK QUESTIONS -->
+        <div class="quick-questions">
+          <button class="quick-btn">Projects</button>
+
+          <button class="quick-btn">Skills</button>
+
+          <button class="quick-btn">Research</button>
+
+          <button class="quick-btn">Resume</button>
         </div>
 
-        <div class="row gy-4 mt-4">
-          <div class="col-lg-4 col-md-6">
-            <article class="project-card" aria-label="Book Recommendation System">
-              <img src="assets\img\Book recommender system.png" alt="Book Recommendation System" />
-              <h4 class="mt-3">Book Recommendation System</h4>
-              <p class="small">Implemented a hybrid recommendation engine using collaborative filtering and popularity-based methods to suggest books to users.</p>
-              <div class="project-tags mb-3"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></div>
-              <div class="actions">
-                <a class="btn btn-glow" href="https://github.com/Chahat2830/Book_recommender_App" aria-label="GitHub"><i class="bi bi-github"></i> GitHub</a>
-                <a class="btn btn-glow-outline" href="https://bookrecommenderapp-mqdfz6944npzwjwaasae2h.streamlit.app/" aria-label="Demo"><i class="bi bi-play-circle"></i> Demo</a>
-              </div>
-            </article>
-          </div>
-          
+        <!-- INPUT -->
+        <div class="chat-input-area">
+          <input type="text" id="chatInput" placeholder="Ask something..." />
 
-          <div class="col-lg-4 col-md-6">
-            <article class="project-card" aria-label="Olympic Analysis Dashboard">
-              <img src="assets\img\Olympic Analysis Dashboard.png" alt="Olympic Analysis Dashboard" />
-              <h4 class="mt-3">Olympic Analysis Dashboard</h4>
-              <p class="small">Designed an interactive dashboard to analyze Olympic history data with visual insights like medal tallies, top athletes, and country-wise performance..</p>
-              <div class="project-tags mb-3"><span>Pandas</span><span>Matplotlib</span><span>seaborn</span></div>
-              <div class="actions">
-                <a class="btn btn-glow" href="https://github.com/Chahat2830/Olympic--Analysis-app"><i class="bi bi-github"></i> GitHub</a>
-                <a class="btn btn-glow-outline" href="https://olympic--analysis-app-m3fsbv72w4vu4viqbtnajw.streamlit.app/"><i class="bi bi-play-circle"></i> Demo</a>
-              </div>
-            </article>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <article class="project-card" aria-label="SMS Spam Detection">
-              <img src="assets\img\sms spam.png" alt="SMS Spam Detection" />
-              <h4 class="mt-3">SMS Spam Detection</h4>
-              <p class="small">Built a machine learning model to classify messages as spam or not using NLP techniques, TF-IDF, and supervised learning algorithms.</p>
-              <div class="project-tags mb-3"><span>Python</span><span>NLP</span><span>Streamlit </span></div>
-              <div class="actions">
-                <a class="btn btn-glow" href="https://github.com/Chahat2830/spam-classifier-app"><i class="bi bi-github"></i> GitHub</a>
-                <a class="btn btn-glow-outline" href="https://spam-classifier-app-7qexcgehtqzzsk8mwhumwi.streamlit.app/"><i class="bi bi-play-circle"></i> Demo</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- NEW PROJECT 4 (PLACEHOLDER) -->
-          <div class="col-lg-4 col-md-6">
-            <article class="project-card" aria-label="New Project 1">
-              <img src="assets\img\Smartphone Price Prediction.png" alt="Placeholder Image" />
-              <h4 class="mt-3">Smartphone Price Prediction</h4>
-              <p class="small">The Smartphone Price Prediction project aims to build a machine learning model that accurately predicts the price of a smartphone based on its specifications and features.
-                             </p>
-              <div class="project-tags mb-3"><span>Linear Regression</span><span>Random Forest Regressor</span><span>XGBoost Regressor</span></div>
-              <div class="actions">
-                <a class="btn btn-glow" href="https://github.com/Chahat2830/Smartphone-Price-Predictor" aria-label="GitHub"><i class="bi bi-github"></i> GitHub</a>
-                <a class="btn btn-glow-outline" href="https://smartphone-price-predictor-kfxscls8bpdj3orzgarpoq.streamlit.app/" aria-label="Demo"><i class="bi bi-play-circle"></i> Demo</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- NEW PROJECT 5 (PLACEHOLDER) -->
-          <div class="col-lg-4 col-md-6">
-            <article class="project-card" aria-label="New Project 2">
-              <img src="assets\img\placeholder.png" alt="Placeholder Image" />
-              <h4 class="mt-3">Machine Learning Project 5</h4>
-              <p class="small">Details about the fifth project, focusing on the models and methodology used.</p>
-              <div class="project-tags mb-3"><span>Model X</span><span>Framework Y</span><span>Deployment Z</span></div>
-              <div class="actions">
-                <a class="btn btn-glow" href="#" aria-label="GitHub"><i class="bi bi-github"></i> GitHub</a>
-                <a class="btn btn-glow-outline" href="#" aria-label="Demo"><i class="bi bi-play-circle"></i> Demo</a>
-              </div>
-            </article>
-          </div>
-
-          <!-- NEW PROJECT 6 (PLACEHOLDER) -->
-          <div class="col-lg-4 col-md-6">
-            <article class="project-card" aria-label="New Project 3">
-              <img src="assets\img\placeholder.png" alt="Placeholder Image" />
-              <h4 class="mt-3">NLP / CV Project 6</h4>
-              <p class="small">Summary of the sixth project, emphasizing innovation and practical application.</p>
-              <div class="project-tags mb-3"><span>NLP</span><span>Computer Vision</span><span>API</span></div>
-              <div class="actions">
-                <a class="btn btn-glow" href="#" aria-label="GitHub"><i class="bi bi-github"></i> GitHub</a>
-                <a class="btn btn-glow-outline" href="#" aria-label="Demo"><i class="bi bi-play-circle"></i> Demo</a>
-              </div>
-            </article>
-          </div>
-
-
+          <button id="sendMessage">
+            <i class="bi bi-send-fill"></i>
+          </button>
         </div>
       </div>
-    </section>
-
-    <!-- Education / Experience / Certificates (boxed) -->
-
-    <section id="education" class="education section" data-aos="fade-up">
-      <div class="container">
-        <div class="section-header text-center mb-3">
-          <h2>Education & Experience</h2>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="info-card">
-              <h5>Bachelor in Computer Applications</h5>
-              <p class="small mb-2">IGNOU</p>
-              <p class="small">Focus on software development and algorithms.</p>
-            </div>
-            
-          </div>
-          
-
-          <div class="col-md-4">
-            <div class="info-card">
-              <h5>Experience</h5>
-              <p class="small mb-2">AI & ML  projects</p>
-              <p class="small">Hands-on projects in ML, CV, NLP and production deployment.</p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="info-card">
-              <h5>Certificates</h5>
-              <p class="small mb-2"></p>
-              <p class="small">Click view to open certificate details.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Certificates detailed cards -->
-    <section id="certificates" class="certificates section" data-aos="fade-up">
-      <div class="container">
-        <div class="section-header text-center mb-3"><h2>Certificates</h2></div>
-        <div class="row g-3">
-          <div class="col-md-4">
-            <div class="cert-card">
-              <div class="cert-content">
-                <h6>Python Programming</h6>
-                <p class="small mb-2">NIELIT</p>
-                <a href="assets\img\cirtificate\Python.jpg" class="btn btn-sm btn-glow">View</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="cert-card">
-              <div class="cert-content">
-                <h6>AI Bootcamp</h6>
-                <p class="small mb-2">NIELIT</p>
-                <a href="assets\img\cirtificate\ai_bootcamp_page-0001.jpg" class="btn btn-sm btn-glow">View</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="cert-card">
-              <div class="cert-content">
-                <h6>Front-End Development</h6>
-                <p class="small mb-2">NIELIT</p>
-                <a href="assets\img\cirtificate\web devlopment_page-0001.jpg" class="btn btn-sm btn-glow">View</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="contact section" data-aos="fade-up">
-      <div class="container text-center">
-        <h2>Let's Build the Future Together</h2>
-        <p class="small">Ready to collaborate on innovative AI projects? Let's connect!</p>
-
-        <div class="d-flex justify-content-center gap-3 mt-3">
-          <a class="btn btn-glow" href="assets\img\CHAHAT_CV.pdf_page-0001.jpg"><i class="bi bi-download"></i> Download Resume</a>
-          <a class="btn btn-glow-outline" href="#"><i class="bi bi-chat-dots"></i> Start Conversation</a>
-        </div>
-
-        <div class="row gy-3 mt-4 justify-content-center">
-          <div class="col-6 col-md-3 contact-icon"><i class="bi bi-envelope"></i><p class="mb-0">chahatkumar1104@gmail.com</p></div>
-          <div class="col-6 col-md-3 contact-icon"><i class="bi bi-linkedin"></i><p class="mb-0">Chahat Kumar</p></div>
-          <div class="col-6 col-md-3 contact-icon"><i class="bi bi-github"></i><p class="mb-0">Chahat2830</p></div>
-          
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer id="footer" class="footer text-center">
-    <div class="container">
-      <p class="mb-0">© 2025 <strong>Chahat</strong>. Building the future with AI.</p>
     </div>
-  </footer>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Scroll to top">
-    <i class="bi bi-arrow-up-short"></i>
-  </a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS -->
-  <script src="assets/js/main.js"></script>
-</body>
+    <!-- JS -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
