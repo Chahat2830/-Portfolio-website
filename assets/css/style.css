@@ -735,3 +735,28 @@ body {
     border-color: #00d4ff;
     color: #00d4ff;
 }
+
+.contact-box a{
+    color:#00d4ff;
+
+    text-decoration:none;
+
+    font-weight:500;
+
+    transition:0.3s ease;
+}
+
+.contact-box a:hover{
+    color:#b388ff;
+
+    text-shadow:
+      0 0 10px rgba(0,212,255,0.5);
+
+    text-decoration:underline;
+}
+
+.contact-box p{
+    margin-bottom:20px;
+
+    font-size:18px;
+}
