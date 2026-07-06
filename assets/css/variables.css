@@ -1,0 +1,37 @@
+/* ==========================================================================
+   PHASE 1 — PROFESSIONAL SLATE TECH DESIGN SYSTEM VARIABLES
+   ========================================================================== */
+:root {
+    /* Slate Blue & Corporate Tech Palette Mapping */
+    --bg: #F4F6F9;
+    /* Crisp, clean, premium light grey canvas background */
+    --surface: #E9ECF2;
+    /* Subtle cool-grey surface layering */
+    --card: #FFFFFF;
+    /* Pure sheet white for ultimate project readability */
+    --card-dark: #D8E0EC;
+    /* Professional mid-tone slate grey */
+    --primary: #0F172A;
+    /* Ultra-dark slate/navy for sharp typography and elements */
+    --secondary: #3B82F6;
+    /* Deep electric blue for primary focus accents */
+    --accent: #64748B;
+    /* Sophisticated slate grey for subtitles/secondary text */
+    --white: #FFFFFF;
+    /* Standard pure white fallback */
+
+    /* Semi-Transparent Variants for Premium Blurs */
+    --navbar-bg: rgba(244, 246, 249, 0.75);
+    --text-muted: #334155;
+    /* Deep high-contrast readable body text */
+
+    /* Structural Specifications */
+    --radius-lg: 20px;
+    /* Slightly tighter, cleaner card radius for structural professionalism */
+    --radius-md: 12px;
+    --radius-sm: 6px;
+    --transition: cubic-bezier(0.16, 1, 0.3, 1) 0.5s;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    /* Light elegant drop-shadows */
+    --shadow-hover: 0 20px 40px rgba(15, 23, 42, 0.08);
+}

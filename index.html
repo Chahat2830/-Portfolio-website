@@ -2,684 +2,929 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chahat | Computer Vision & Machine Learning Engineer</title>
 
-    <title>Chahat | Portfolio</title>
-    <link rel="icon" href="assets\img\logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets\img\logo.png">
-    <link rel="apple-touch-icon" href="assets\img\logo.png">
+    <!-- Favicons -->
+    <link rel="icon" href="assets/img/logo.png" />
+    <link rel="apple-touch-icon" href="assets/img/logo.png" />
 
-    <!-- GOOGLE FONT -->
+    <!-- Premium Google Font (Outfit & Inter Stack) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- BOOTSTRAP ICONS -->
+    <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
 
-    <!-- CSS -->
+    <!-- Assets Stylesheets Link System -->
+    <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-
-    <!-- THREE.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-    <!-- VANTA -->
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <link rel="stylesheet" href="assets/css/animations.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
-
   <body>
-    <!-- BACKGROUND BLURS -->
-    <div class="blur blur1"></div>
-    <div class="blur blur2"></div>
-    <div class="blur blur3"></div>
+    <!-- Apple-Style Background Canvas Noise & Organic Soft Blur Gradients -->
+    <div class="bg-noise-canvas"></div>
+    <div class="blur-shape shape-1"></div>
+    <div class="blur-shape shape-2"></div>
 
-    <!-- NAVBAR -->
+    <!-- NAVBAR COMPONENT -->
     <nav class="navbar">
-      <div class="logo">CHAHAT</div>
-
+      <a href="#" class="logo">CHAHAT</a>
       <ul class="nav-links">
+        <li><a href="#about">Home</a></li>
+        <li><a href="#about-detail">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#contact">Contact</a></li>
         <li>
-          <a href="#about">About</a>
-        </li>
-
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-
-        <li>
-          <a href="#contact">Contact</a>
+          <a href="assets/resume/CHAHAT CV.pdf" class="nav-resume-btn" download
+            >Resume</a
+          >
         </li>
       </ul>
-
       <div class="menu-toggle">
         <i class="bi bi-list"></i>
       </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO SECTION -->
     <section class="hero" id="about">
-      <!-- 3D BACKGROUND -->
-      <div id="vanta-bg"></div>
-
-      <div class="hero-content">
-        <p class="hero-top typed-text">COMPUTER VISION ENGINEER</p>
-
-        <h1 class="hero-title">
-          Building <br />
-          Intelligent <br />
-          Vision Systems
-        </h1>
-
-        <p class="hero-description">
-          CNN-based Deep Learning, Explainable AI, Computer Vision, and
-          Real-Time Emotion Recognition.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#projects" class="primary-btn"> Explore Projects </a>
-
-          <a href="assets\resume\CHAHAT CV.pdf" class="secondary-btn">
-            Download Resume
-          </a>
-        </div>
-      </div>
-
-      <!-- FLOATING AI SPHERE -->
-      <div class="ai-sphere"></div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats">
-      <div class="stat-box">
-        <h2>10+</h2>
-        <p>Projects</p>
-      </div>
-
-      <div class="stat-box">
-        <h2>5+</h2>
-        <p>AI Systems</p>
-      </div>
-
-      <div class="stat-box">
-        <h2>3+</h2>
-        <p>Research Areas</p>
-      </div>
-
-      <div class="stat-box">
-        <h2>100%</h2>
-        <p>Passion</p>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="skills-section" id="skills">
-      <p class="section-tag">MY EXPERTISE</p>
-
-      <h2 class="section-title">Technologies I Use</h2>
-
-      <div class="skills-grid">
-        <div class="skill-card">
-          <i class="bi bi-cpu-fill"></i>
-
-          <h3>Machine Learning</h3>
-
-          <p>Building predictive AI models using Python and deep learning.</p>
-        </div>
-
-        <div class="skill-card">
-          <i class="bi bi-camera-video-fill"></i>
-
-          <h3>Computer Vision</h3>
-
-          <p>
-            Real-time facial emotion recognition, OpenCV, CNN, image
-            classification.
+      <div class="container hero-grid">
+        <div class="hero-content scroll-reveal fade-up">
+          <span class="hero-hello">Hello, I'm</span>
+          <h1 class="hero-title">Chahat</h1>
+          <h2 class="hero-subtitle">
+            Computer Vision Engineer & AI Researcher
+          </h2>
+          <p class="hero-description">
+            Specializing in CNN-based deep learning architectures for real-world
+            visual intelligence[cite: 4]. Experientially driven to build
+            advanced image preprocessing pipelines, face detection, and live
+            inference engines that solve complex vision challenges beyond
+            academic baselines[cite: 4].
           </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a
+              href="assets/resume/CHAHAT CV.pdf"
+              class="btn btn-secondary"
+              download
+              ><i class="bi bi-download"></i> Download CV</a
+            >
+          </div>
         </div>
-
-        <div class="skill-card">
-          <i class="bi bi-code-slash"></i>
-
-          <h3>Full Stack</h3>
-
-          <p>Building responsive futuristic web applications and dashboards.</p>
+        <div class="hero-visual scroll-reveal scale">
+          <div class="image-editorial-frame">
+            <div class="placeholder-graphic">
+              <i class="bi bi-cpu-fill"></i>
+            </div>
+            <div class="tiny-dot dot-1"></div>
+            <div class="tiny-dot dot-2"></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section class="projects" id="projects">
-      <p class="section-tag">Featured Work</p>
+    <!-- QUICK FACT METRIC STRIP (Pre-filled to fix image_44818d.jpg static state) -->
+    <section class="stats-counter-strip container">
+      <div class="stat-counter-card scroll-reveal fade-up">
+        <h3 class="counter" data-target="10">10+</h3>
+        <p>Featured Projects</p>
+      </div>
+      <div
+        class="stat-counter-card scroll-reveal fade-up"
+        style="transition-delay: 0.1s"
+      >
+        <h3 class="counter" data-target="5">5+</h3>
+        <p>AI Engine Systems</p>
+      </div>
+      <div
+        class="stat-counter-card scroll-reveal fade-up"
+        style="transition-delay: 0.2s"
+      >
+        <h3 class="counter" data-target="3">3+</h3>
+        <p>Research Focuses</p>
+      </div>
+      <div
+        class="stat-counter-card scroll-reveal fade-up"
+        style="transition-delay: 0.3s"
+      >
+        <h3 class="counter" data-target="100">100%</h3>
+        <p>Operational Passion %</p>
+      </div>
+    </section>
 
-      <h2 class="section-title">My Projects</h2>
+    <!-- ABOUT SECTION (Modified to fix image_4481b0.jpg grid elements) -->
+    <section class="about-section" id="about-detail">
+      <div class="container">
+        <span class="section-tag">Biography</span>
+        <h2 class="section-title">Academic & Project Foundations</h2>
 
-      <div class="project-grid">
-        <!-- PROJECT 1 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img
-              src="assets/img/Book recommender system.png"
-              alt="Book Recommendation System"
-            />
+        <div class="about-split-layout">
+          <div class="about-visual scroll-reveal slide-left">
+            <div class="about-visual-box">
+              <i class="bi bi-mortarboard-fill"></i>
+            </div>
           </div>
-
-          <div class="project-content">
-            <h3>Book Recommendation System</h3>
-
+          <div class="about-text-content scroll-reveal slide-right">
+            <h3>Bridging Formal Education with Practical AI Specializations</h3>
             <p>
-              AI-powered book recommendation system using collaborative
-              filtering and content-based approaches.
+              My foundational roadmap combines systemic computing logic with
+              structured hardware design, certified technical tracks, and
+              multi-paradigm research engineering under formal institutes like
+              NIELIT[cite: 4, 5].
             </p>
 
-            <div class="tags">
-              <span>Python |</span>
-              <span>Machine Learning |</span>
-              <span>Streamlit UI</span>
-            </div>
-
-            <!-- NEW BUTTONS -->
-            <div class="project-buttons">
-              <a
-                href="https://bookrecommenderapp-mqdfz6944npzwjwaasae2h.streamlit.app/"
-                target="_blank"
-                class="demo-btn"
-              >
-                <i class="bi bi-play-circle-fill"></i>
-                Run Project
-              </a>
-
-              <a
-                href="https://github.com/yourusername/project"
-                target="_blank"
-                class="github-btn"
-              >
-                <i class="bi bi-github"></i>
-                Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 2 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets\img\SMS Detection.png" alt="" />
-          </div>
-
-          <div class="project-content">
-            <h3>SMS Spam Detection</h3>
-
-            <p>
-              Built a machine learning model to classify messages as spam or not
-              using NLP techniques, TF-IDF, and supervised learning algorithms.
-            </p>
-
-            <div class="tags">
-              <span>ML | </span>
-              <span>NLP | </span>
-              <span>Supervised Learning</span>
-            </div>
-
-            <!-- NEW BUTTONS -->
-            <div class="project-buttons">
-              <a
-                href="https://spam-classifier-app-7qexcgehtqzzsk8mwhumwi.streamlit.app/"
-                target="_blank"
-                class="demo-btn"
-              >
-                <i class="bi bi-play-circle-fill"></i>
-                Run Project
-              </a>
-
-              <a
-                href="https://github.com/yourusername/project"
-                target="_blank"
-                class="github-btn"
-              >
-                <i class="bi bi-github"></i>
-                Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 3 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets\img\Smart phone Price.png" alt="" />
-          </div>
-
-          <div class="project-content">
-            <h3>Smartphone Price Prediction</h3>
-
-            <p>
-              Machine learning model for predicting smartphone prices based on
-              features like brand, specifications, and market trends.
-            </p>
-
-            <div class="tags">
-              <span>Linear Regression | </span>
-              <span>Random Forest | </span>
-              <span>RegressorXGBoost Regressor</span>
-            </div>
-
-            <!-- NEW BUTTONS -->
-            <div class="project-buttons">
-              <a
-                href="https://smartphone-price-predictor-kfxscls8bpdj3orzgarpoq.streamlit.app/
-                target="_blank"
-                class="demo-btn"
-              >
-                <i class="bi bi-play-circle-fill"></i>
-                Run Project
-              </a>
-
-              <a
-                href="https://github.com/yourusername/project"
-                target="_blank"
-                class="github-btn"
-              >
-                <i class="bi bi-github"></i>
-                Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 4 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets\img\Song recommender.png" alt="" />
-          </div>
-
-          <div class="project-content">
-            <h3>
-              Real-Time-Mood-Based-Song-Recommendation-System-Using-Facial-Emotion-Recognition
-            </h3>
-
-            <p>
-              AI-Powered Real-Time Mood-Based Music Recommendation System A
-              computer vision–driven application that detects facial emotions in
-              real time using a ConvNeXt-based ONNX model and intelligently
-              recommends personalized music playlists through hybrid similarity
-              and popularity modeling.
-            </p>
-
-            <div class="tags">
-              <span>AI | </span>
-              <span>Computer Vision | </span>
-              <span>Music Recommendation</span>
-            </div>
-
-            <!-- NEW BUTTONS -->
-            <div class="project-buttons">
-              <a
-                href="https://encj2ntjmr8h5i7muh9n2z.streamlit.app/"
-                target="_blank"
-                class="demo-btn"
-              >
-                <i class="bi bi-play-circle-fill"></i>
-                Run Project
-              </a>
-
-              <a
-                href="https://github.com/yourusername/project"
-                target="_blank"
-                class="github-btn"
-              >
-                <i class="bi bi-github"></i>
-                Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 5 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets\img\smart farmer.png" alt="AgroMind AI" />
-          </div>
-
-          <div class="project-content">
-            <h3>
-              AgroMind AI: Simple, memorable, and highlights the "brain" (AI)
-              behind the agriculture.
-            </h3>
-
-            <p>
-              AgroMind AI is an end-to-end precision agriculture platform that
-              bridges the gap between IoT sensing and cognitive AI. By
-              integrating real-time environmental data with Machine Learning and
-              Llama 3 (LLM) reasoning, it empowers farmers to make data-driven
-              decisions on crop selection and irrigation management. Featuring a
-              FastAPI backend and a real-time Streamlit-inspired dashboard,
-              AgroMind AI isn't just a monitoring tool—it’s an intelligent
-              farming assistant designed for a sustainable future.
-            </p>
-
-            <div class="tags">
-              <span>Internet of Things (IoT) | </span>
-              <span>FastAPI | </span>
-              <span>MongoDB</span>
-            </div>
-
-            <!-- NEW BUTTONS -->
-            <div class="project-buttons">
-              <a
-                href="https://your-streamlit-link.streamlit.app"
-                target="_blank"
-                class="demo-btn"
-              >
-                <i class="bi bi-play-circle-fill"></i>
-                Run Project
-              </a>
-
-              <a
-                href="https://github.com/yourusername/project"
-                target="_blank"
-                class="github-btn"
-              >
-                <i class="bi bi-github"></i>
-                Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 6 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets\img\corona Pandmic.png" alt="" />
-          </div>
-
-          <div class="project-content">
-            <h3>Corona-Pandemic-Analysis</h3>
-
-            <p>
-              This project analyzes the global impact of the COVID-19 pandemic
-              using real-world data. It provides interactive visualizations and
-              insights into confirmed cases, recoveries, and deaths across
-              different countries and time periods.
-            </p>
-
-            <div class="tags">
-              <span>Pandas | </span>
-              <span>Matplot LIb | </span>
-              <span>Streamlit UI </span>
-            </div>
-
-            <!-- NEW BUTTONS -->
-            <div class="project-buttons">
-              <a
-                href="https://corona---pandmic--analysis-5qvuldjdpg7qyxiugdzzea.streamlit.app/"
-                target="_blank"
-                class="demo-btn"
-              >
-                <i class="bi bi-play-circle-fill"></i>
-                Run Project
-              </a>
-
-              <a
-                href="https://github.com/yourusername/project"
-                target="_blank"
-                class="github-btn"
-              >
-                <i class="bi bi-github"></i>
-                Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 7 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets\img\Animal detection.png" alt="" />
-          </div>
-
-          <div class="project-content">
-            <h3>Animal Detection Night Vision System</h3>
-
-            <p>
-              This project is a sophisticated end-to-end computer vision
-              pipeline designed for real-time detection and classification of
-              animals in low-light and thermal environments. It leverages the
-              state-of-the-art ConvNeXtV2 deep learning architecture,
-              pre-trained on nocturnal imagery, and optimized using ONNX Runtime
-              for high-performance edge deployment..
-            </p>
-
-            <div class="tags">
-              <span>Computer Vision | </span>
-              <span>Deep Learning | </span>
-              <span>ONNX Runtime</span>
-            </div>
-
-            <!-- NEW BUTTONS -->
-            <div class="project-buttons">
-              <a
-                href="https://your-streamlit-link.streamlit.app"
-                target="_blank"
-                class="demo-btn"
-              >
-                <i class="bi bi-play-circle-fill"></i>
-                Run Project
-              </a>
-
-              <a
-                href="https://github.com/yourusername/project"
-                target="_blank"
-                class="github-btn"
-              >
-                <i class="bi bi-github"></i>
-                Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 8 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets/img/project8.jpg" alt="" />
-          </div>
-
-          <div class="project-content">
-            <h3>Face Detection</h3>
-
-            <p>Computer vision project for facial recognition and detection.</p>
-
-            <div class="tags">
-              <span>OpenCV</span>
-              <span>CV</span>
-              <span>Python</span>
-            </div>
-
-            <!-- NEW BUTTONS -->
-            <div class="project-buttons">
-              <a
-                href="https://your-streamlit-link.streamlit.app"
-                target="_blank"
-                class="demo-btn"
-              >
-                <i class="bi bi-play-circle-fill"></i>
-                Run Project
-              </a>
-
-              <a
-                href="https://github.com/yourusername/project"
-                target="_blank"
-                class="github-btn"
-              >
-                <i class="bi bi-github"></i>
-                Code
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 9 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets/img/project9.jpg" alt="" />
-          </div>
-
-          <div class="project-content">
-            <h3>AI Chatbot</h3>
-
-            <p>Intelligent chatbot system using NLP and AI responses.</p>
-
-            <div class="tags">
-              <span>Chatbot</span>
-              <span>NLP</span>
-              <span>AI</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- PROJECT 10 -->
-        <div class="project-card">
-          <div class="project-image">
-            <img src="assets/img/project10.jpg" alt="" />
-          </div>
-
-          <div class="project-content">
-            <h3>Price Prediction</h3>
-
-            <p>Smartphone price prediction using regression models.</p>
-
-            <div class="tags">
-              <span>Regression</span>
-              <span>ML</span>
-              <span>Python</span>
+            <div class="quick-facts-grid">
+              <div class="fact-pill">
+                <strong>B.A. (Completed):</strong> Delhi University SOL[cite: 4]
+              </div>
+              <div class="fact-pill">
+                <strong>NIELIT 'A' Level:</strong> Advanced Information
+                Technology[cite: 4]
+              </div>
+              <div class="fact-pill">
+                <strong>NIELIT 'O' Level:</strong> System Fundamentals[cite: 4]
+              </div>
+              <div class="fact-pill">
+                <strong>Core Focus:</strong> Computer Vision Engine Deployments
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-   <!-- CONTACT -->
-<section class="contact" id="contact">
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section class="skills-section" id="skills">
+      <div class="container">
+        <span class="section-tag">Expertise Matrix</span>
+        <h2 class="section-title">Core Engineering Toolset</h2>
 
-  <p class="section-tag">CONTACT</p>
+        <div class="skills-layout-grid">
+          <div class="skills-cards-wrapper scroll-reveal slide-left">
+            <div class="mini-skill-card">
+              <i class="bi bi-terminal-fill"></i>
+              <h3>Programming & Core Data</h3>
+              <p>
+                Advanced feature scripting inside Python alongside structured
+                validation arrays utilizing relational SQL querying
+                engines[cite: 4].
+              </p>
+            </div>
+            <div class="mini-skill-card">
+              <i class="bi bi-layers-half"></i>
+              <h3>Deep Learning Architectures</h3>
+              <p>
+                Constructing multilayer artificial neural networks (ANN),
+                convolutional structures (CNN), hyperparameter tuning, and deep
+                transfer learning configurations[cite: 4, 5].
+              </p>
+            </div>
+            <div class="mini-skill-card">
+              <i class="bi bi-eye-fill"></i>
+              <h3>Computer Vision Frameworks</h3>
+              <p>
+                Real-time stream matrices utilizing OpenCV, structural facial
+                detection tracking, expression recognition arrays, and image
+                preprocessing vectors[cite: 4].
+              </p>
+            </div>
+          </div>
 
-  <h2 class="section-title">Let's Build Together</h2>
+          <div class="skills-bars-container scroll-reveal slide-right">
+            <h3>Fluency Projections</h3>
 
-  <div class="contact-box">
+            <div class="skill-progress-item">
+              <div class="skill-bar-labels">
+                <span>Python & NumPy/Pandas Stack[cite: 4, 5]</span
+                ><span>95%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" data-width="95%"></div>
+              </div>
+            </div>
 
-    <p>
-      📩 Email:
-      <a href="mailto:chahatkumar1104@gmail.com">
-        chahatkumar1104@gmail.com
-      </a>
-    </p>
+            <div class="skill-progress-item">
+              <div class="skill-bar-labels">
+                <span>Deep Learning & CNN Optimization[cite: 4, 5]</span
+                ><span>90%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" data-width="90%"></div>
+              </div>
+            </div>
 
-    <p>
-      💻 GitHub:
-      <a
-        href="https://github.com/Chahat2830"
-        target="_blank"
+            <div class="skill-progress-item">
+              <div class="skill-bar-labels">
+                <span>Computer Vision (OpenCV Pipeline)[cite: 4]</span
+                ><span>92%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" data-width="92%"></div>
+              </div>
+            </div>
+
+            <div class="skill-progress-item">
+              <div class="skill-bar-labels">
+                <span>NLP Text Classification & Parsing[cite: 4, 5]</span
+                ><span>85%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" data-width="85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-progress-item">
+              <div class="skill-bar-labels">
+                <span>Structured SQL Engineering[cite: 4]</span><span>80%</span>
+              </div>
+              <div class="bar-track">
+                <div class="bar-fill" data-width="80%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <span class="section-tag">Production Repositories</span>
+        <h2 class="section-title">Featured Engineering Projects</h2>
+
+        <div class="premium-projects-grid">
+          <!-- PROJECT 1: ADVANCED REAL-TIME FER -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/Song recommender.png"
+                alt="Real-Time Facial Emotion Recognition System"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">Deep Learning Focus</div>
+            </div>
+            <div class="card-body-content">
+              <h3>Real-Time Facial Emotion Telemetry</h3>
+              <p>
+                Designed a real-time facial expression pipeline utilizing deep
+                convolutional neural networks (CNN) and OpenCV tracking
+                layers[cite: 4, 5]. Achieved high, class-balanced optimization
+                profiles across real-time video streaming feeds[cite: 4, 5].
+              </p>
+              <div class="card-tech-stack">
+                <span>CNN Architectures</span><span>OpenCV Matrix</span
+                ><span>Live Inference</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Classification</span><strong>Multi-Class</strong>
+                </div>
+                <div>
+                  <span>Latency Profile</span><strong>Edge Real-Time</strong>
+                </div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://encj2ntjmr8h5i7muh9n2z.streamlit.app/"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> Run Engine</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: AGROMIND AI -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/smart farmer.png"
+                alt="AgroMind AI Precision Agriculture"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">IoT Core Connected</div>
+            </div>
+            <div class="card-body-content">
+              <h3>AgroMind AI: Cognitive Agriculture</h3>
+              <p>
+                Precision agriculture ecosystem integrating sensor data networks
+                with cognitive Llama 3 operational instructions via a robust
+                FastAPI layer.
+              </p>
+              <div class="card-tech-stack">
+                <span>FastAPI Nodes</span><span>LLM Reasoning</span
+                ><span>Sensory Networks</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Inference Engine</span><strong>Llama 3 Clusters</strong>
+                </div>
+                <div><span>Database Core</span><strong>MongoDB</strong></div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://your-streamlit-link.streamlit.app"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> View System</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: NIGHT VISION ANIMAL DETECTOR -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/Animal detection.png"
+                alt="Nocturnal Thermal Animal Detector"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">ConvNeXtV2 Core</div>
+            </div>
+            <div class="card-body-content">
+              <h3>Nocturnal Thermal Animal Pipeline</h3>
+              <p>
+                Sophisticated computer vision object validation framework
+                configured with optimized ConvNeXtV2 arrays to perform tracking
+                functions across thermal imaging bands.
+              </p>
+              <div class="card-tech-stack">
+                <span>ConvNeXtV2 Array</span><span>Thermal Processing</span
+                ><span>ONNX Pipelines</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Target Metrics</span><strong>94% Macro-F1</strong>
+                </div>
+                <div>
+                  <span>Inference Engine</span
+                  ><strong>ONNX Runtime Edge</strong>
+                </div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://your-streamlit-link.streamlit.app"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> Run Engine</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: BOOK RECOMMENDER SYSTEM -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/Book recommender system.png"
+                alt="Book Recommender System"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">Machine Learning</div>
+            </div>
+            <div class="card-body-content">
+              <h3>Book Recommendation Architecture</h3>
+              <p>
+                Built a personalized suggestion framework deploying popularity
+                matrices combined with structured content-based similarity
+                filtering calculations[cite: 4, 5].
+              </p>
+              <div class="card-tech-stack">
+                <span>Similarity Filtering</span
+                ><span>Feature Engineering[cite: 5]</span
+                ><span>Python Stack</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Approach</span
+                  ><strong>Content + Popularity[cite: 4, 5]</strong>
+                </div>
+                <div>
+                  <span>Optimization</span><strong>Cosine Similarity</strong>
+                </div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://bookrecommenderapp-mqdfz6944npzwjwaasae2h.streamlit.app/"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> Run Engine</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 5: SMS SPAM DETECTION SYSTEM -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/SMS Detection.png"
+                alt="SMS Spam Detection System"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">NLP Node</div>
+            </div>
+            <div class="card-body-content">
+              <h3>SMS Text Spam Classifier</h3>
+              <p>
+                Developed a natural language processing text classification
+                pipeline processing raw string inputs via tokenization and
+                vector scaling to run binary classification steps[cite: 5].
+              </p>
+              <div class="card-tech-stack">
+                <span>NLP Preprocessing[cite: 4, 5]</span
+                ><span>TF-IDF Tokenization</span
+                ><span>Supervised ML[cite: 4, 5]</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Classification</span><strong>Binary Labeling</strong>
+                </div>
+                <div>
+                  <span>Feature Map</span><strong>Token Vectors</strong>
+                </div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://spam-classifier-app-7qexcgehtqzzsk8mwhumwi.streamlit.app/"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> Run Engine</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 6: OLYMPICS DASHBOARD -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/Smart phone Price.png"
+                alt="Olympics Analytics Dashboard"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">Data Analytics</div>
+            </div>
+            <div class="card-body-content">
+              <h3>Olympics Historical Analytics</h3>
+              <p>
+                Designed an interactive analytical metrics tracking dashboard
+                processing structural datasets to display historical performance
+                patterns[cite: 4, 5].
+              </p>
+              <div class="card-tech-stack">
+                <span>Data Visualizations[cite: 4]</span
+                ><span>Pandas Structuring</span><span>Insights Tracking</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Data Engine</span
+                  ><strong>Structured Datasets[cite: 4, 5]</strong>
+                </div>
+                <div>
+                  <span>Focus Area</span
+                  ><strong>Performance Trends[cite: 4, 5]</strong>
+                </div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://smartphone-price-predictor-kfxscls8bpdj3orzgarpoq.streamlit.app/"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> Run Engine</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 7: COVID-19 DASHBOARD -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/corona Pandmic.png"
+                alt="COVID-19 Pandemic Dashboard"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">Data Insights</div>
+            </div>
+            <div class="card-body-content">
+              <h3>Global Pandemic Analytics Hub</h3>
+              <p>
+                Constructed an operational dashboard map that visualizes global
+                COVID-19 health tracking trends using parsed open data
+                vectors[cite: 4, 5].
+              </p>
+              <div class="card-tech-stack">
+                <span>Pandas Wrangling</span><span>Matplotlib Grid</span
+                ><span>Streamlit UI</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Analytics</span
+                  ><strong>Global Trends[cite: 4, 5]</strong>
+                </div>
+                <div>
+                  <span>Visual Matrix</span
+                  ><strong>Trend Mapping[cite: 5]</strong>
+                </div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://corona---pandmic--analysis-5qvuldjdpg7qyxiugdzzea.streamlit.app/"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> Run Engine</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 8: FACE DETECTION MATRIX -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/project8.jpg"
+                alt="Face Detection System"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">Computer Vision</div>
+            </div>
+            <div class="card-body-content">
+              <h3>Face Detection Analytics Array</h3>
+              <p>
+                Computer vision recognition framework processing local video
+                arrays to cleanly map real-time facial coordinate
+                parameters[cite: 4].
+              </p>
+              <div class="card-tech-stack">
+                <span>OpenCV Elements[cite: 4]</span
+                ><span>Python Pipeline[cite: 4]</span
+                ><span>Vision Processing</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Library Core</span
+                  ><strong>OpenCV Arrays[cite: 4]</strong>
+                </div>
+                <div>
+                  <span>Execution</span><strong>Real-Time Stream</strong>
+                </div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://your-streamlit-link.streamlit.app"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> Run Engine</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 9: AI CHATBOT SYSTEM -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/project9.jpg"
+                alt="AI Chatbot Node"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">NLP Node</div>
+            </div>
+            <div class="card-body-content">
+              <h3>Intelligent NLP Chatbot Engine</h3>
+              <p>
+                Constructed an intelligent natural language conversational
+                engine designed to map user text strings to appropriate
+                contextual answers[cite: 4].
+              </p>
+              <div class="card-tech-stack">
+                <span>NLP Parsing[cite: 4]</span
+                ><span>AI Responses[cite: 4]</span><span>Text Engineering</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Domain</span><strong>Natural Language[cite: 4]</strong>
+                </div>
+                <div>
+                  <span>Architecture</span><strong>Contextual Logic</strong>
+                </div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> Explore Link</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 10: PRICE PREDICTION SYSTEM -->
+          <article class="premium-project-card scroll-reveal fade-up">
+            <div class="card-image-wrapper">
+              <img
+                src="assets/img/project10.jpg"
+                alt="Smartphone Price Prediction"
+                loading="lazy"
+              />
+              <div class="card-metric-overlay">Regression Grid</div>
+            </div>
+            <div class="card-body-content">
+              <h3>Predictive Hardware Valuation Engine</h3>
+              <p>
+                Applied historical parameter pricing variables across standard
+                tree regression networks to estimate structural values[cite: 4].
+              </p>
+              <div class="card-tech-stack">
+                <span>Regression Models[cite: 4]</span
+                ><span>ML Analytics[cite: 4]</span
+                ><span>Python Scripts[cite: 4]</span>
+              </div>
+              <div class="card-meta-metrics">
+                <div>
+                  <span>Mathematical Type</span
+                  ><strong>Regression Ensembles[cite: 4]</strong>
+                </div>
+                <div>
+                  <span>Environment</span><strong>Scikit-Learn Nodes</strong>
+                </div>
+              </div>
+              <div class="card-action-links">
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn primary-action"
+                  ><i class="bi bi-play-circle-fill"></i> Explore Link</a
+                >
+                <a
+                  href="https://github.com/Chahat2830"
+                  target="_blank"
+                  class="action-btn secondary-action"
+                  ><i class="bi bi-github"></i> Source</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH HIGHLIGHT SECTION -->
+    <section class="research-section" id="research">
+      <div class="container">
+        <div class="editorial-research-wrapper scroll-reveal fade-up">
+          <span class="section-tag"
+            >Research Experience (First Author)[cite: 4, 5]</span
+          >
+          <h2>Explainable Imbalance-Aware Facial Emotion Recognition</h2>
+          <p class="research-abstract">
+            Affiliated with the
+            <strong
+              >National Institute of Electronics and Information Technology
+              (NIELIT), Delhi</strong
+            >[cite: 4, 5]. Investigating structural class scarcity profiles
+            within Affective Computing architectures by initializing a
+            <strong>ConvNeXt V2-Tiny</strong> backbone with self-supervised
+            FCMAE parameters pretrained across ImageNet-22K and ImageNet-1K
+            blocks to increase feature generalization under data bounds[cite:
+            4].
+          </p>
+          <p class="research-abstract">
+            Resolved data class distribution skew using tailored
+            <strong>Class-Weighted Focal Loss configurations</strong>, pushing
+            minority classification profiles aggressively forward[cite: 4].
+            Validated neural node logic transparency parameters through
+            localized <strong>Grad-CAM mapping frameworks</strong>[cite: 4, 5].
+          </p>
+
+          <div class="research-metrics-grid">
+            <div class="research-metric-item">
+              <span>Overall Metric Reached</span>
+              <strong>0.94 Macro-F1[cite: 4]</strong>
+            </div>
+            <div class="research-metric-item">
+              <span>Minority Fear F1-Score</span>
+              <strong>0.91 F1 Profile[cite: 4]</strong>
+            </div>
+            <div class="research-metric-item">
+              <span>Baseline Comparison</span>
+              <strong
+                >Outperformed DenseNet121 & EfficientNetV2[cite: 4]</strong
+              >
+            </div>
+            <div class="research-metric-item">
+              <span>Backbone Topology</span>
+              <strong>ConvNeXt V2-Tiny[cite: 4]</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE EXPERIENCES TIMELINE -->
+    <section class="timeline-section" id="timeline">
+      <div class="container">
+        <span class="section-tag">Milestones</span>
+        <h2 class="section-title">Professional Development Journey</h2>
+
+        <div class="editorial-timeline">
+          <div class="timeline-node scroll-reveal slide-left">
+            <div class="node-badge">Part-Time</div>
+            <div class="node-body">
+              <h3>Project Assistant / Teaching Support — NIELIT[cite: 4, 5]</h3>
+              <p>
+                Assisted in processing and checking academic project tracks
+                related to advanced IT architectures and basic computing
+                nodes[cite: 4]. Guided technical learners through Python
+                programming methods and introductory machine learning conceptual
+                blocks[cite: 4, 5].
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-node scroll-reveal slide-right">
+            <div class="node-badge">Academics</div>
+            <div class="node-body">
+              <h3>NIELIT Certifications Array[cite: 4, 5]</h3>
+              <p>
+                Completed formal specialized training validation streams across
+                Web Development, Python Programming, Internet of Things (IoT),
+                Cloud Computing, and an extensive Artificial Intelligence
+                bootcamp[cite: 4, 5].
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREMIUM CONTACT AREA -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="premium-contact-card scroll-reveal fade-up">
+          <h2>Let's Build Something Amazing</h2>
+          <p>
+            Available for corporate engagements, advanced computer vision
+            scaling models, and specialized core data science deployment
+            positions.
+          </p>
+
+          <div class="contact-links-cluster">
+            <a href="mailto:chahatkumar1104@gmail.com" class="contact-pill"
+              ><i class="bi bi-envelope-at-fill"></i> Email</a
+            >
+            <a
+              href="https://github.com/Chahat2830"
+              target="_blank"
+              class="contact-pill"
+              ><i class="bi bi-github"></i> GitHub</a
+            >
+            <a
+              href="https://www.linkedin.com/in/chahat-kumar-34475231a/"
+              target="_blank"
+              class="contact-pill"
+              ><i class="bi bi-linkedin"></i> LinkedIn</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO ASSISTANT CHATBOT INTEGRATION -->
+    <div class="chatbot-floating-system">
+      <button
+        class="chat-trigger-btn"
+        id="chatToggle"
+        aria-label="Open Chatbot"
       >
-        github.com/Chahat2830
-      </a>
-    </p>
-
-    <p>
-      🔗 LinkedIn:
-      <a
-        href="https://www.linkedin.com/in/chahat-kumar-34475231a/"
-        target="_blank"
-      >
-        linkedin.com/in/chahat-kumar-34475231a
-      </a>
-    </p>
-
-  </div>
-
-</section>
-
-    <!-- CHATBOT -->
-    <div class="chatbot-container">
-      <!-- BUTTON -->
-      <button class="chat-toggle" id="chatToggle">
         <i class="bi bi-robot"></i>
       </button>
 
-      <!-- CHAT BOX -->
-      <div class="chat-box" id="chatBox">
-        <!-- HEADER -->
-        <div class="chat-header">
+      <div class="chat-interface-window" id="chatBox">
+        <div class="chat-interface-header">
           <div>
             <h3>Chahat AI</h3>
-
-            <p>Portfolio Assistant</p>
+            <p>Portfolio Neural Engine</p>
           </div>
-
-          <button id="closeChat">
-            <i class="bi bi-x-lg"></i>
-          </button>
+          <button id="closeChat"><i class="bi bi-x-lg"></i></button>
         </div>
 
-        <!-- BODY -->
-        <div class="chat-body" id="chatBody">
-          <div class="bot-message">
+        <div class="chat-interface-body" id="chatBody">
+          <div class="bot-msg-bubble">
             Hi 👋 <br /><br />
-
-            I'm Chahat AI Assistant. Ask me about:
+            I'm Chahat's AI Assistant Portfolio Engine. Ask me anything
+            regarding:
             <br /><br />
-
-            • Projects
-            <br />
-
-            • Skills
-            <br />
-
-            • Research
-            <br />
-
-            • Resume
-            <br />
-
-            • Contact
+            • Architectural Projects <br />
+            • Computer Vision Skills <br />
+            • Model Research Data <br />
+            • Direct Contact Info
           </div>
         </div>
 
-        <!-- QUICK QUESTIONS -->
-        <div class="quick-questions">
-          <button class="quick-btn">Projects</button>
-
-          <button class="quick-btn">Skills</button>
-
-          <button class="quick-btn">Research</button>
-
-          <button class="quick-btn">Resume</button>
+        <div class="chat-quick-suggestions">
+          <button class="quick-suggest-btn">Projects</button>
+          <button class="quick-suggest-btn">Skills</button>
+          <button class="quick-suggest-btn">Research</button>
+          <button class="quick-suggest-btn">Contact</button>
         </div>
 
-        <!-- INPUT -->
-        <div class="chat-input-area">
-          <input type="text" id="chatInput" placeholder="Ask something..." />
-
-          <button id="sendMessage">
-            <i class="bi bi-send-fill"></i>
-          </button>
+        <div class="chat-input-wrapper">
+          <input
+            type="text"
+            id="chatInput"
+            placeholder="Ask the neural network..."
+          />
+          <button id="sendMessage"><i class="bi bi-send-fill"></i></button>
         </div>
       </div>
     </div>
 
-    <!-- JS -->
+    <!-- MINIMAL EDITORIAL FOOTER -->
+    <footer class="editorial-footer">
+      <div class="container">
+        <p class="footer-logo">CHAHAT</p>
+        <p class="footer-thanks">
+          Engineered for minimalism and computing precision.
+        </p>
+        <p class="footer-copyright">
+          &copy; 2026 Chahat. All engineering rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts Paths referencing your folder architecture -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/scroll.js"></script>
   </body>
 </html>

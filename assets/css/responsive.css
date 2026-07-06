@@ -1,0 +1,111 @@
+/* ==========================================================================
+   PHASE 18 — FLUID CONTAINER GRID BREAKPOINTS
+   ========================================================================== */
+
+@media (max-width: 992px) {
+
+    .hero-grid,
+    .about-split-layout,
+    .skills-layout-grid {
+        grid-template-columns: 1fr;
+        /* 2 Column shifts to 1 Column array */
+        gap: 48px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        order: -1;
+        /* Keep graphic elements on top for vertical configurations */
+    }
+
+    .stats-counter-strip {
+        grid-template-columns: repeat(2, 1fr);
+        /* Desktop 4-col to 2-col tablet layout */
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 80px 0;
+        /* Tighten structural vertical spaces */
+    }
+
+    .navbar {
+        padding: 12px 24px;
+    }
+
+    .nav-links {
+        display: none;
+        /* Mobile navigation toggle array */
+        position: absolute;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        padding: 30px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-hover);
+        border: 1px solid rgba(41, 28, 14, 0.08);
+        gap: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: var(--primary);
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .section-title {
+        font-size: 32px;
+        margin-bottom: 48px;
+    }
+
+    .stats-counter-strip {
+        grid-template-columns: 1fr;
+        /* Phase 18: Mobile grid fallback to 1 column */
+        margin-top: 0;
+    }
+
+    .premium-projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .editorial-research-wrapper {
+        padding: 30px 20px;
+    }
+
+    .editorial-timeline {
+        padding-left: 20px;
+    }
+
+    .node-badge {
+        left: -43px;
+        font-size: 11px;
+    }
+
+    .chat-interface-window {
+        width: calc(100vw - 40px);
+        right: -10px;
+        height: 75vh;
+    }
+}

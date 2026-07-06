@@ -1,14 +1,9 @@
-// =========================
-// FUTURISTIC AI PORTFOLIO
-// =========================
-
+/* ==========================================================================
+   PHASE 4 & 13 — USER INTERACTION CONTROLLER (FAIL-SAFE NEURAL ROUTER)
+   ========================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
-  // =========================
-  // MOBILE MENU
-  // =========================
-
+  // Mobile Nav Toggle Mechanics
   const menuToggle = document.querySelector(".menu-toggle");
-
   const navLinks = document.querySelector(".nav-links");
 
   if (menuToggle) {
@@ -17,360 +12,170 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================
-  // NAVBAR SCROLL
-  // =========================
-
+  // Navbar Scroll Dynamic Layering
   const navbar = document.querySelector(".navbar");
-
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       navbar.classList.add("scrolled");
     } else {
       navbar.classList.remove("scrolled");
     }
   });
 
-  // =========================
-  // TYPING EFFECT
-  // =========================
-
-  const typedText = document.querySelector(".typed-text");
-
-  const words = [
-    "COMPUTER VISION ENGINEER",
-
-    "AI ENGINEER",
-
-    "CNN RESEARCHER",
-
-    "FULL STACK DEVELOPER",
-
-    "IOT BUILDER",
-  ];
-
-  let wordIndex = 0;
-  let charIndex = 0;
-  let deleting = false;
-
-  function typeEffect() {
-    const currentWord = words[wordIndex];
-
-    if (deleting) {
-      typedText.textContent = currentWord.substring(0, charIndex--);
-    } else {
-      typedText.textContent = currentWord.substring(0, charIndex++);
-    }
-
-    let speed = deleting ? 50 : 100;
-
-    if (!deleting && charIndex === currentWord.length) {
-      deleting = true;
-
-      speed = 1500;
-    } else if (deleting && charIndex === 0) {
-      deleting = false;
-
-      wordIndex = (wordIndex + 1) % words.length;
-
-      speed = 300;
-    }
-
-    setTimeout(typeEffect, speed);
-  }
-
-  typeEffect();
-
-  // =========================
-  // SCROLL REVEAL
-  // =========================
-
-  const revealItems = document.querySelectorAll(
-    ".skill-card, .project-card, .stat-box, .contact-box",
-  );
-
-  function revealOnScroll() {
-    const trigger = window.innerHeight * 0.85;
-
-    revealItems.forEach((item) => {
-      const top = item.getBoundingClientRect().top;
-
-      if (top < trigger) {
-        item.classList.add("show");
-      }
-    });
-  }
-
-  window.addEventListener("scroll", revealOnScroll);
-
-  revealOnScroll();
-
-  // =========================
-  // PROJECT CARD TILT
-  // =========================
-
-  const cards = document.querySelectorAll(".project-card");
-
-  cards.forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-
-      const x = e.clientX - rect.left;
-
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-
-      const centerY = rect.height / 2;
-
-      const rotateX = (y - centerY) / 18;
-
-      const rotateY = (centerX - x) / 18;
-
-      card.style.transform = `
-        perspective(1000px)
-        rotateX(${rotateX}deg)
-        rotateY(${rotateY}deg)
-        translateY(-10px)
-      `;
-    });
-
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = `
-        perspective(1000px)
-        rotateX(0deg)
-        rotateY(0deg)
-        translateY(0px)
-      `;
-    });
-  });
-
-  // =========================
-  // CURSOR GLOW
-  // =========================
-
-  const glow = document.createElement("div");
-
-  glow.classList.add("cursor-glow");
-
-  document.body.appendChild(glow);
-
-  document.addEventListener("mousemove", (e) => {
-    glow.style.left = `${e.clientX}px`;
-
-    glow.style.top = `${e.clientY}px`;
-  });
-
-  // =========================
-  // CHATBOT
-  // =========================
-
+  // ==========================================================================
+  // ARCHITECTURAL CHATBOT NETWORKING LOGIC
+  // ==========================================================================
   const chatToggle = document.getElementById("chatToggle");
-
   const chatBox = document.getElementById("chatBox");
-
   const closeChat = document.getElementById("closeChat");
-
   const sendBtn = document.getElementById("sendMessage");
-
   const chatInput = document.getElementById("chatInput");
-
   const chatBody = document.getElementById("chatBody");
+  const quickBtns = document.querySelectorAll(".quick-suggest-btn");
 
-  const quickBtns = document.querySelectorAll(".quick-btn");
+  chatToggle.addEventListener("click", () =>
+    chatBox.classList.toggle("active"),
+  );
+  closeChat.addEventListener("click", () => chatBox.classList.remove("active"));
 
-  // OPEN CHAT
+  async function handleOutgoingMessage(text) {
+    if (!text.trim()) return;
 
-  chatToggle.addEventListener("click", () => {
-    chatBox.classList.toggle("active");
-  });
-
-  // CLOSE CHAT
-
-  closeChat.addEventListener("click", () => {
-    chatBox.classList.remove("active");
-  });
-
-  // SEND MESSAGE
-
-  function sendMessage(message) {
-    if (message.trim() === "") return;
-
-    // USER MESSAGE
-
-    const userDiv = document.createElement("div");
-
-    userDiv.classList.add("user-message");
-
-    userDiv.textContent = message;
-
-    chatBody.appendChild(userDiv);
-
-    // SCROLL
-
+    // 1. Output User Input Bubble
+    const userBubble = document.createElement("div");
+    userBubble.classList.add("user-msg-bubble");
+    userBubble.textContent = text;
+    chatBody.appendChild(userBubble);
     chatBody.scrollTop = chatBody.scrollHeight;
 
-    // BOT REPLY
-
-    setTimeout(() => {
-      const botDiv = document.createElement("div");
-
-      botDiv.classList.add("bot-message");
-
-      botDiv.innerHTML = getBotReply(message);
-
-      chatBody.appendChild(botDiv);
-
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }, 700);
-
     chatInput.value = "";
+
+    // 2. Insert Temporary Typing Indicator Bubble
+    const typingBubble = document.createElement("div");
+    typingBubble.classList.add("bot-msg-bubble");
+    typingBubble.id = "grok-typing-indicator";
+    typingBubble.innerHTML = "<span>🤖 Thinking...</span>";
+    chatBody.appendChild(typingBubble);
+    chatBody.scrollTop = chatBody.scrollHeight;
+
+    // 3. Request Token Stream via Transparent Fail-safe Hybrid Routing
+    const botReplyHTML = await queryNeuralReply(text);
+
+    // 4. Tear Down Typing Indicator and Render Real Response
+    const indicator = document.getElementById("grok-typing-indicator");
+    if (indicator) indicator.remove();
+
+    const botBubble = document.createElement("div");
+    botBubble.classList.add("bot-msg-bubble");
+    botBubble.innerHTML = botReplyHTML;
+    chatBody.appendChild(botBubble);
+    chatBody.scrollTop = chatBody.scrollHeight;
   }
 
-  // SEND BUTTON
-
-  sendBtn.addEventListener("click", () => {
-    sendMessage(chatInput.value);
-  });
-
-  // ENTER KEY
-
+  sendBtn.addEventListener("click", () =>
+    handleOutgoingMessage(chatInput.value),
+  );
   chatInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      sendMessage(chatInput.value);
-    }
+    if (e.key === "Enter") handleOutgoingMessage(chatInput.value);
   });
-
-  // QUICK BUTTONS
 
   quickBtns.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      sendMessage(btn.textContent);
-    });
+    btn.addEventListener("click", () => handleOutgoingMessage(btn.textContent));
   });
 
-  // =========================
-  // AI CHATBOT RESPONSES
-  // =========================
+  // HYBRID ROUTER (TRIES GROK API FIRST -> FALLS BACK TO LOCAL EXPERT PARSER)
+  async function queryNeuralReply(userInputText) {
+    // ⚠️ Place your real key here if you want Grok live generation.
+    const XAI_API_KEY = "ai_your_actual_secure_grok_api_token_here";
 
-  function getBotReply(message) {
-    const msg = message.toLowerCase();
+    // Check if the key is still a placeholder string
+    const isPlaceholder = XAI_API_KEY.includes("your_actual_secure");
 
-    // PROJECTS
-
-    if (msg.includes("project")) {
-      return `
-      🚀 Featured Projects:<br><br>
-
-      • AgroMind AI: Smart Precision Farming (IoT + LLM)<br>
-      • Real-Time Mood-Based Song Recommendation System<br>
-      • Animal Detection Night Vision System (ConvNeXtV2)<br>
-      • Smartphone Price Prediction System<br>
-      • Book Recommendation System (Collaborative + Content)<br>
-      • SMS Spam Detection System (NLP)<br>
-      • Corona Pandemic Analysis Dashboard<br><br>
-
-      Main specialization:
-      AI + Computer Vision + Full-Stack Data Science
+    if (!isPlaceholder) {
+      const SYSTEM_PROMPT = `
+        You are Chahat's Portfolio Assistant. Answer professionally, intelligently, and concisely.
+        Use this context to answer user questions accurately:
+        - Completed B.A. from Delhi University SOL and NIELIT Advanced 'A' Level & 'O' Level certifications.
+        - Specializes in Computer Vision, CNN architectures, real-time vision systems, and intelligent automation[cite: 4, 5].
+        - First author on research involving explainable FER using ConvNeXt V2-Tiny, Class-Weighted Focal Loss, and Grad-CAM layers at NIELIT Delhi[cite: 4, 5]. Outperformed DenseNet121 and EfficientNetV2 with a macro-F1 score of 0.94[cite: 4].
+        - Developed notable projects like a Real-Time Facial Emotion Recognition System, AgroMind AI Precision Agriculture, a Nocturnal Thermal Animal Detector, a Book Recommender, and an SMS Spam Detection System[cite: 4, 5].
+        Keep answers short and formatted for clean web presentation using bold tags and breaks. Do not mention system context or leak the API key.
       `;
+
+      const targetUrl = "https://api.x.ai/v1/chat/completions";
+      const proxyEndpoint = `https://corsproxy.io/?${encodeURIComponent(targetUrl)}`;
+
+      try {
+        const response = await fetch(proxyEndpoint, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${XAI_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            model: "grok-2-latest",
+            messages: [
+              { role: "system", content: SYSTEM_PROMPT },
+              { role: "user", content: userInputText },
+            ],
+            temperature: 0.3,
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          let formattedText = data.choices[0].message.content
+            .replace(/\n/g, "<br>")
+            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+            .replace(/\*(.*?)\*/g, "<em>$1</em>");
+          return formattedText;
+        } else {
+          console.warn(
+            `Proxy API returned status ${response.status}. Dropping to high-fidelity local matrix.`,
+          );
+        }
+      } catch (error) {
+        console.error("API Fetch Gateway timed out or was blocked:", error);
+      }
     }
 
-    // SKILLS
-    else if (msg.includes("skill") || msg.includes("technology")) {
-      return `
-      💻 Technical Skills:<br><br>
+    // ==========================================================================
+    // BACKUP EXPERT MATRICES (Instant response if API is offline or key is blank)
+    // ==========================================================================
+    const cleanStr = userInputText.toLowerCase();
 
-      • Python<br>
-      • SQL<br>
-      • Machine Learning<br>
-      • Deep Learning<br>
-      • CNN Architecture<br>
-      • OpenCV<br>
-      • ANN<br>
-      • Transfer Learning<br>
-      • Git<br>
-      • VS Code
-      `;
+    if (cleanStr.includes("project")) {
+      return `<strong>🚀 Core Production Modules:</strong><br><br>
+              • <strong>Real-Time Facial Emotion Recognition System:</strong> End-to-end vision pipeline using custom CNN configurations and optimized OpenCV streams[cite: 4, 5].<br>
+              • <strong>AgroMind AI:</strong> Precision agriculture binding hardware metrics with Llama 3 reasoning via FastAPI.<br>
+              • <strong>Nocturnal Thermal Animal Detector:</strong> Computer vision inference utilizing ConvNeXtV2 optimized through ONNX Runtime for low-light bands.<br>
+              • <strong>Book Recommender System:</strong> Deploying content-based similarity matching calculations[cite: 5].<br>
+              • <strong>SMS Spam Detection System:</strong> NLP text classification network using tokenization and supervised binary profiling[cite: 5].`;
+    }
+    if (cleanStr.includes("skill") || cleanStr.includes("technology")) {
+      return `<strong>💻 Technical Engineering Toolset:</strong><br><br>
+              • <strong>Programming & Core Data:</strong> Python, SQL[cite: 4, 5]<br>
+              • <strong>Deep Learning Array:</strong> ANN, CNN, Transfer Learning, Hyperparameter Tuning[cite: 4, 5]<br>
+              • <strong>Computer Vision:</strong> OpenCV, Image Preprocessing, Face Detection, Facial Expression Matrix[cite: 4, 5]<br>
+              • <strong>Data Visualization:</strong> Matplotlib, Seaborn, Interactive Dashboard Development[cite: 5]`;
+    }
+    if (cleanStr.includes("research") || cleanStr.includes("paper")) {
+      return `<strong>🔬 Active Neural Investigation (First Author):</strong><br><br>
+              Published under the <strong>National Institute of Electronics and Information Technology (NIELIT), Delhi</strong>[cite: 4, 5].<br><br>
+              • <strong>Title:</strong> Explainable Imbalance-Aware Facial Emotion Recognition[cite: 4, 5]<br>
+              • <strong>Topology:</strong> ConvNeXt V2-Tiny Backbone with self-supervised FCMAE pretraining[cite: 4].<br>
+              • <strong>Optimization:</strong> Addressed severe class skew using Class-Weighted Focal Loss (Fear class F1-score: 0.91)[cite: 4].<br>
+              • <strong>Explainability:</strong> Integrated Grad-CAM visualization for neural transparency validation[cite: 4, 5].<br>
+              • <strong>Benchmark:</strong> Achieved a <strong>0.94 Macro-F1 score</strong>, actively outperforming DenseNet121 and EfficientNetV2[cite: 4].`;
+    }
+    if (cleanStr.includes("contact") || cleanStr.includes("email")) {
+      return `<strong>📩 Secure Communication Nodes:</strong><br><br>
+              • <strong>Email Direct:</strong> <a href="mailto:chahatkumar1104@gmail.com">chahatkumar1104@gmail.com</a>[cite: 4, 5]<br>
+              • <strong>GitHub Network:</strong> <a href="https://github.com/Chahat2830" target="_blank">github.com/Chahat2830</a>[cite: 4, 5]<br>
+              • <strong>LinkedIn Connection:</strong> <a href="https://www.linkedin.com/in/chahat-kumar-34475231a/" target="_blank">linkedin.com/in/chahat-kumar-34475231a</a>[cite: 4, 5]`;
     }
 
-    // CV / RESUME
-    else if (msg.includes("resume") || msg.includes("cv")) {
-      return `
-      📄 Resume Available.<br><br>
-
-      Use the Resume button on homepage
-      to download my complete CV.
-      `;
-    }
-
-    // EXPERIENCE
-    else if (msg.includes("experience")) {
-      return `
-      🧠 Experience:<br><br>
-
-      • Project Assistant at NIELIT<br>
-      • Teaching Support (Part-Time)<br>
-      • Guided students in Python and ML<br>
-      • Built AI + Computer Vision Systems
-      `;
-    }
-
-    // RESEARCH
-    else if (msg.includes("research") || msg.includes("paper")) {
-      return `
-      🔬 Research Experience:<br><br>
-
-      Explainable Imbalance-Aware
-      Facial Emotion Recognition.<br><br>
-
-      • ConvNeXt V2-Tiny<br>
-      • Grad-CAM Explainability<br>
-      • Macro-F1 Score: 0.94<br>
-      • Fear Class F1: 0.91
-      `;
-    }
-
-    // CONTACT
-    else if (msg.includes("contact") || msg.includes("email")) {
-      return `
-      📩 Contact Information:<br><br>
-
-      Email:
-      chahatkumar1104@email.com<br><br>
-
-      GitHub:
-      github.com/Chahat2830<br><br>
-
-      LinkedIn:
-      linkedin.com/in/chahat-kumar-34475231a
-      `;
-    }
-
-    // EDUCATION
-    else if (msg.includes("education") || msg.includes("study")) {
-      return `
-      🎓 Education:<br><br>
-
-      
-      • B.A — Delhi University SOL<br>
-      • O Level — NIELIT<br>
-      • A Level — NIELIT
-      `;
-    }
-
-    // DEFAULT
-    else {
-      return `
-      🤖 I can help you with:<br><br>
-
-      • Projects<br>
-      • Skills<br>
-      • Research<br>
-      • Experience<br>
-      • Education<br>
-      • Resume<br>
-      • Contact
-      `;
-    }
+    return `🤖 <strong>Portfolio Assistant Matrix Online.</strong><br><br>
+            I can talk fluently about Chahat's engineering profile. Try asking about my <strong>Projects</strong>, technical <strong>Skills</strong>, or formal AI <strong>Research</strong> milestones!`;
   }
 });

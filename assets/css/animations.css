@@ -1,0 +1,32 @@
+/* ==========================================================================
+   PHASE 15 — PURE STRUCTURAL CSS TRANSITION PARAMETERS
+   ========================================================================== */
+
+/* Intersecting Observer Activation States */
+.scroll-reveal {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translate(0) scale(1) !important;
+}
+
+/* Phase 15 Directions */
+.fade-up {
+    transform: translateY(40px);
+}
+
+.slide-left {
+    transform: translateX(-40px);
+}
+
+.slide-right {
+    transform: translateX(40px);
+}
+
+.scale {
+    transform: scale(0.92);
+}
